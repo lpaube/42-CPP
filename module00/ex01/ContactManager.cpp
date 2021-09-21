@@ -1,30 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactManager.hpp                                 :+:      :+:    :+:   */
+/*   ContactManager.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 17:25:31 by laube             #+#    #+#             */
-/*   Updated: 2021/09/21 16:01:54 by laube            ###   ########.fr       */
+/*   Created: 2021/09/21 15:23:07 by laube             #+#    #+#             */
+/*   Updated: 2021/09/21 15:23:08 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_MANAGER_H
-# define CONTACT_MANAGER_H
-
-# include <iostream>
-# include <string.h>
-
-class	ContactManager
-{
-	public:
-		Contact	contacts[8];
-		int		contact_amt;
-
-		void	add_contact(void);
-		void	search_contact(void);
-
-}
-
-#endif
