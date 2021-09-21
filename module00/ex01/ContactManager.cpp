@@ -6,7 +6,13 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:23:07 by laube             #+#    #+#             */
-/*   Updated: 2021/09/21 15:23:08 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/21 16:16:16 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ContactManager.hpp"
+
+void ContactManager::add_contact(void)
+{
+	
+}
