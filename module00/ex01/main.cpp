@@ -6,12 +6,17 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 15:56:56 by laube             #+#    #+#             */
-/*   Updated: 2021/08/16 17:18:30 by laube            ###   ########.fr       */
+/*   Updated: 2021/08/16 18:54:19 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string.h>
+
+void	perform_add(void)
+{
+	
+}
 
 int	str_match(char *str, const char *match)
 {
