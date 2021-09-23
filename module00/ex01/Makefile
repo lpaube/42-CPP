@@ -1,6 +1,6 @@
 NAME =		phonebook
 
-SRCS =		main.cpp
+SRCS =		main.cpp Contact.cpp ContactManager.cpp
 
 OBJS =		$(SRCS:.cpp=.o)
 OBJ_DIR =	objs

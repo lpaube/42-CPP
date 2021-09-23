@@ -6,9 +6,14 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 14:17:08 by laube             #+#    #+#             */
-/*   Updated: 2021/09/22 20:44:38 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/23 12:30:00 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
+Contact::Contact()
+{
+	this->is_active = 0;
+	this->index = 0;
+}

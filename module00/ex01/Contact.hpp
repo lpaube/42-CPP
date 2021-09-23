@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 14:25:45 by laube             #+#    #+#             */
-/*   Updated: 2021/09/22 21:21:37 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/23 12:29:47 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 class Contact
 {
 	public:
-		int	is_active = 0;
+		Contact();
+		int	is_active;
+		int	index;
 		std::string	first_name;
 		std::string	last_name;
 		std::string nickname;
