@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:23:07 by laube             #+#    #+#             */
-/*   Updated: 2021/09/23 13:12:37 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/23 15:35:50 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,47 @@ void	ContactManager::add_contact(void)
 		std::getline(std::cin >> std::ws, this->contacts[0].secret); 
 } 
 
+void	ContactManager::get_index(void)
+{
+	size_t	buff_index;
+
+	std::cout << "Enter an index: ";
+	std::cin >> buff_index;
+	while (!(std::cin.good())
+	{
+		//CHECK CONDITION OF CIN
+	}
+	if (this->contacts[buff_index].is_active == 1)
+		// PRINT PROPERTIES OF CONTACT WITH INDEX
+
+}
+
 void	ContactManager::search_contact(void)
 {
-	std::cout << "|*******************************************|";
-	std::cout << "|     Index|First Name| Last Name|  Nickname|";
-	std::cout << "|*******************************************|";
+	int	i;
+
+	std::cout << "|-------------------------------------------|" << std::endl;
+	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+	std::cout << "|===========================================|" << std::endl;
+	i = 0;
 	while (this->contacts[i].is_active)
 	{
-		
+		std::cout << "|" << std::setw(10) << this->contacts[i].index;
+		if (this->contacts[i].first_name.length() > 10)
+			std::cout << "|" << std::setw(10) << this->contacts[i].first_name.substr(0, 9) << ".";
+		else
+			std::cout << "|" << std::setw(10) << this->contacts[i].first_name;
+		if (this->contacts[i].last_name.length() > 10)
+			std::cout << "|" << this->contacts[i].last_name.substr(0, 9) << ".";
+		else
+			std::cout << "|" << std::setw(10) << this->contacts[i].last_name;
+		if (this->contacts[i].nickname.length() > 10)
+			std::cout << "|" << std::setw(10) << this->contacts[i].nickname.substr(0, 9) << ".";
+		else
+			std::cout << "|" << std::setw(10) << this->contacts[i].nickname;
+		std::cout << "|" << std::endl;
+		i++;
 	}
+	std::cout << "|-------------------------------------------|" << std::endl;
+	get_index();
 }

@@ -8,7 +8,7 @@ OBJ_DIR =	objs
 OBJS_PATH =	$(addprefix $(OBJ_DIR)/, $(OBJS))
 
 CC =		clang++
-CFLAGS =	-Wall -Wextra -Werror -g
+CFLAGS =	-Wall -Wextra -Werror -g -std=c++98
 
 $(NAME): $(OBJ_DIR) $(OBJS_PATH)
 	@$(CC) $(OBJS_PATH) -o $(NAME)
