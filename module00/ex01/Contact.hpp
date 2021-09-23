@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactManager.cpp                                 :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/21 15:23:07 by laube             #+#    #+#             */
-/*   Updated: 2021/09/22 22:59:26 by laube            ###   ########.fr       */
+/*   Created: 2021/09/22 14:25:45 by laube             #+#    #+#             */
+/*   Updated: 2021/09/22 21:21:37 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ContactManager.hpp"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-ContactManager::ContactManager()
+# include <string>
+
+class Contact
 {
-	this->contact_amt = 0;
-}
+	public:
+		int	is_active = 0;
+		std::string	first_name;
+		std::string	last_name;
+		std::string nickname;
+		std::string phone_num;
+		std::string secret;
+};
 
-void ContactManager::add_contact(void)
-{
-	int	i;
-
-	i = 7;
-	while (i > 0)
-	{
-		this->contacts[i] = this->contacts[i - 1];
-		i--;
-	}
-		std::cout << "Please enter FIRST NAME: ";
-		std::getline(std::cin, this->contacts[0]); 
-} 
+#endif
