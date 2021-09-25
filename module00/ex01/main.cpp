@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 15:56:56 by laube             #+#    #+#             */
-/*   Updated: 2021/09/23 14:54:48 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/24 21:53:25 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main(void)
 
 	while (true)
 	{
+		std::cout << std::endl;
 		std::cout << "Please enter one of the following" << std::endl;
 		std::cout << "'ADD'		: Add a new contact in the directory." << std::endl;
 		std::cout << "'SEARCH'	: See the informations of a specific contact." << std::endl;
@@ -50,10 +51,10 @@ int	main(void)
 			contact_manager.add_contact();
 		else if (str_match(buff, "SEARCH"))
 			contact_manager.search_contact();
-		// else if (str_match(buff, "EXIT"))
-		// 	perform_exit();
-		else
+		else if (str_match(buff, "EXIT"))
 			return (0);
+		else
+			std::cout << "Error: Invalid command" << std::endl;
 	}
 	return (0);
 }

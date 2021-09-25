@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:23:07 by laube             #+#    #+#             */
-/*   Updated: 2021/09/23 15:35:50 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/24 21:52:48 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,20 @@ void	ContactManager::get_index(void)
 	size_t	buff_index;
 
 	std::cout << "Enter an index: ";
-	std::cin >> buff_index;
-	while (!(std::cin.good())
+	if (std::cin >> buff_index && this->contacts[buff_index].is_active == 1)
 	{
-		//CHECK CONDITION OF CIN
+		std::cout << "FIRST NAME: " << contacts[buff_index].first_name << std::endl;
+		std::cout << "LAST NAME: " << contacts[buff_index].last_name << std::endl;
+		std::cout << "NICKNAME: " << contacts[buff_index].nickname << std::endl;
+		std::cout << "PHONE NUM: " << contacts[buff_index].phone_num << std::endl;
+		std::cout << "SECRET: " << contacts[buff_index].secret << std::endl;
 	}
-	if (this->contacts[buff_index].is_active == 1)
-		// PRINT PROPERTIES OF CONTACT WITH INDEX
-
+	else
+	{
+		std::cout << "Error: Invalid index" << std::endl;
+		std::cin.clear();
+		std::cin.ignore(10000, '\n');
+	}
 }
 
 void	ContactManager::search_contact(void)
@@ -68,7 +74,7 @@ void	ContactManager::search_contact(void)
 	{
 		std::cout << "|" << std::setw(10) << this->contacts[i].index;
 		if (this->contacts[i].first_name.length() > 10)
-			std::cout << "|" << std::setw(10) << this->contacts[i].first_name.substr(0, 9) << ".";
+			std::cout << "|" << this->contacts[i].first_name.substr(0, 9) << ".";
 		else
 			std::cout << "|" << std::setw(10) << this->contacts[i].first_name;
 		if (this->contacts[i].last_name.length() > 10)
@@ -76,7 +82,7 @@ void	ContactManager::search_contact(void)
 		else
 			std::cout << "|" << std::setw(10) << this->contacts[i].last_name;
 		if (this->contacts[i].nickname.length() > 10)
-			std::cout << "|" << std::setw(10) << this->contacts[i].nickname.substr(0, 9) << ".";
+			std::cout << "|" << this->contacts[i].nickname.substr(0, 9) << ".";
 		else
 			std::cout << "|" << std::setw(10) << this->contacts[i].nickname;
 		std::cout << "|" << std::endl;
