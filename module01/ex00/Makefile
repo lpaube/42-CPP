@@ -3,7 +3,7 @@ NAME =	brainz
 OBJ_DIR =	objs
 
 SRCS =	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
-OBJS =	$(SRCS:.c=.o)
+OBJS =	$(SRCS:.cpp=.o)
 
 OBJS_PATH =	$(addprefix $(OBJ_DIR)/, $(OBJS))
 
@@ -17,7 +17,7 @@ $(NAME): $(OBJ_DIR) $(OBJS_PATH)
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+$(OBJ_DIR)/%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 	@echo "Created: $@\033[1A\033[M"
 

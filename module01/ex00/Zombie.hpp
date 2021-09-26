@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 22:27:29 by laube             #+#    #+#             */
-/*   Updated: 2021/09/24 22:40:04 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/26 13:06:04 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,20 @@
 
 #include <stdio.h>
 #include <string>
+#include <iostream>
 
+/* CLASS DEFINITIONS*/
 class Zombie {
 	public:
+		Zombie(std::string new_name);
 		~Zombie();
-		void	set_name(std::string new_name);
 		void	announce(void);
 	private:
 		std::string	name;
 };
+
+/* PROTOTYPES */
+Zombie*	newZombie(std::string name);
+void	randomChump(std::string name);
 
 #endif

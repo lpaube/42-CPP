@@ -6,16 +6,14 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 22:16:20 by laube             #+#    #+#             */
-/*   Updated: 2021/09/24 22:31:43 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/26 13:19:25 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie	*newZombie(std::string name)
+int	main(void)
 {
-	Zombie	zombie;
-
-	zombie.create_zombie(name);
-	return (zombie);
+	randomChump("Mad-Max");
+	return (0);
 }
