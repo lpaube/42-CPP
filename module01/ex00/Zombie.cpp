@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 22:32:36 by laube             #+#    #+#             */
-/*   Updated: 2021/09/26 12:59:24 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/26 13:39:45 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ Zombie::~Zombie(void)
 
 void	Zombie::announce(void)
 {
-	std::cout << this->name << " BraiiiiiiinnnnnzzzZ..." << std::endl;
+	std::cout << this->name << ": BraiiiiiiinnnnnzzzZ..." << std::endl;
 }
