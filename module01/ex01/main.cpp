@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 22:16:20 by laube             #+#    #+#             */
-/*   Updated: 2021/09/27 13:32:49 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/27 15:13:26 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@ int	main(void)
 	Zombie*	zombies;
 	int	N;
 
-	N = 10;
-	zombies = zombieHorde(N, "what");
+	N = 5;
+	zombies = zombieHorde(N, "Jimmy");
 	for (int i = 0; i < N; i++)
 	{
 		zombies[i].announce();
 	}
-	delete[] zombies;
+	if (N == 1)
+		delete zombies;
+	else if (N > 1)
+		delete[] zombies;
 	return (0);
 }
