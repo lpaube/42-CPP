@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 22:16:20 by laube             #+#    #+#             */
-/*   Updated: 2021/09/26 13:31:30 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/27 13:27:33 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,15 @@ Zombie*	zombieHorde(int N, std::string name);
 
 int	main(void)
 {
+	Zombie*	zombies;
+	int	N;
+
+	N = 10;
+	
+	zombies = zombieHorde(N, "what");
+	for (int i = 0; i < N; i++)
+	{
+		zombies[i].announce();
+	}
 	return (0);
 }
