@@ -1,4 +1,4 @@
-NAME =	brainz
+NAME =	brainz00
 
 OBJ_DIR =	objs
 
@@ -12,7 +12,7 @@ CFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(OBJ_DIR) $(OBJS_PATH)
 	$(CC) $(OBJS_PATH) -o $(NAME)
-	@echo "\\n\033[32;1m BRAINZ HAS BEEN GENERATED \033[0m \\n"
+	@echo "\\n\033[32;1m BRAINZ00 HAS BEEN GENERATED \033[0m \\n"
 
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
@@ -29,7 +29,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	@echo "\033[34;1m CLEANED BRAINZ \033[0m"
+	@echo "\033[34;1m CLEANED BRAINZ00 \033[0m"
 
 re: fclean all
 
