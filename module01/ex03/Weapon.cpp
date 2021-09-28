@@ -6,11 +6,21 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:42:03 by laube             #+#    #+#             */
-/*   Updated: 2021/09/27 15:48:32 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/27 21:39:53 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
+
+Weapon::Weapon(void)
+{
+	this->type = "";
+}
+
+Weapon::Weapon(std::string type)
+{
+	this->type = type;
+}
 
 std::string const& Weapon::getType(void)
 {
