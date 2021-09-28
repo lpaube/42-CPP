@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 21:13:10 by laube             #+#    #+#             */
-/*   Updated: 2021/09/27 21:56:47 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/28 13:53:52 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string>
 #include "Weapon.hpp"
 
-HumanA::HumanA(std::string name, Weapon weapon)
+HumanA::HumanA(std::string name, Weapon &weapon)
 {
 	this->weapon = weapon;
 	this->name = name;

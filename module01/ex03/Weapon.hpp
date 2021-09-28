@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:39:39 by laube             #+#    #+#             */
-/*   Updated: 2021/09/27 21:37:40 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/28 13:51:05 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 
 class Weapon
 {
-	Weapon(std::string type);
-	std::string	type;
+	public:
+		Weapon(std::string type);
+		Weapon();
+		std::string	type;
 
-	std::string const& getType(void);
-	void setType(std::string new_type);
+		const std::string& getType(void);
+		void setType(std::string new_type);
 };
 
 #endif
