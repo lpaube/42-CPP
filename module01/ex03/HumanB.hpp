@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 13:57:43 by laube             #+#    #+#             */
-/*   Updated: 2021/09/28 14:06:42 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/28 18:53:16 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 
 class HumanB
 {
-	public:
+	private:
 		std::string	name;
-		Weapon		weapon;
+		Weapon		*weapon;
 		
+	public:
 		HumanB(std::string name);
+		void	setWeapon(Weapon &weapon);
 		void	attack(void);
 };

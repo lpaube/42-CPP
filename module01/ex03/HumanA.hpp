@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 21:16:22 by laube             #+#    #+#             */
-/*   Updated: 2021/09/28 13:59:28 by laube            ###   ########.fr       */
+/*   Updated: 2021/09/28 18:44:24 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 class HumanA
 {
-	public:
+	private:
 		std::string	name;
-		Weapon		weapon;
-		
+		Weapon		*weapon;
+	public:
 		HumanA(std::string name, Weapon &weapon);
 		void	attack(void);
 };
