@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 09:04:19 by laube             #+#    #+#             */
-/*   Updated: 2021/10/01 10:26:25 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/01 11:19:12 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ class	Fixed
 {
 	private:
 		int	value;
-		static const int	fract_bits;
+		static const int	fract_bits = 8;
 	public:
 		Fixed();	// Canonical
 		~Fixed();	// Canonical
