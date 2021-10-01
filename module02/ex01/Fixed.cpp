@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 06:19:08 by laube             #+#    #+#             */
-/*   Updated: 2021/10/01 13:46:34 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/01 15:06:45 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,27 @@
 // Constructors
 Fixed::Fixed()
 {
-	value = 0;
 	std::cout << "Default constructor called" << std::endl;
+	value = 0;
 }
 
 Fixed::Fixed(const Fixed& src)
 {
-	value = src.value;
 	std::cout << "Copy constructor called" << std::endl;
+	value = src.value;
 }
 
 Fixed::Fixed(const int num)
 {
-	value = num;
+	std::cout << "Int constructor called" << std::endl;
+	value = num << Fixed::fract_bits;
 }
 
 Fixed::Fixed(const float num)
 {
-
+	std::cout << "Float constructor called" << std::endl;
+	// WTF IS THIS
+	value = roundf(num * (1 << Fixed::fract_bits));
 }
 
 // Destructor
@@ -44,8 +47,8 @@ Fixed::~Fixed()
 // Operator overloads
 Fixed&	Fixed::operator=(const Fixed& src)
 {
-	value = src.value;
 	std::cout << "Assignation operator called" << std::endl;
+	value = src.value;
 	return (*this);
 }
 
@@ -64,6 +67,16 @@ int	Fixed::getRawBits(void) const
 
 void	Fixed::setRawBits(int const raw)
 {
-	value = raw;
 	std::cout << "setRawBits member function called" << std::endl;
+	value = raw;
+}
+
+float	Fixed::toFloat(void) const
+{
+	return (value / 1 << Fixed::fract_bits);
+}
+
+int		Fixed::toInt(void) const
+{
+	return (value >> Fixed::fract_bits);
 }
