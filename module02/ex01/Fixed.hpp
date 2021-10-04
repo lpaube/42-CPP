@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 09:04:19 by laube             #+#    #+#             */
-/*   Updated: 2021/10/01 12:39:39 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/04 14:59:05 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class	Fixed
 		Fixed(const int num);
 		Fixed(const float num);
 		~Fixed();	// Canonical
-		Fixed& 	operator=(const Fixed& dst); // Canonical
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+		Fixed& 	operator=(const Fixed& src); // Canonical
+		int		getValue(void) const;
+		void	setValue(int const new_val);
 		float	toFloat(void) const;
 		int		toInt(void) const;
 };

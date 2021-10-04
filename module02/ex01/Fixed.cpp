@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 06:19:08 by laube             #+#    #+#             */
-/*   Updated: 2021/10/01 15:06:45 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/04 14:55:07 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@ Fixed::Fixed(const int num)
 	value = num << Fixed::fract_bits;
 }
 
+/* HOW TO GET FIXED POINT FROM FLOATING POINT:
+** https://stackoverflow.com/questions/3402702/converting-floating-point-to-32-bit-fixed-point-in-java
+*/
+
 Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called" << std::endl;
-	// WTF IS THIS
 	value = roundf(num * (1 << Fixed::fract_bits));
 }
 
@@ -59,21 +62,19 @@ std::ostream& operator<<(std::ostream& op, Fixed const& rhs)
 }
 
 // Member functions
-int	Fixed::getRawBits(void) const
+int	Fixed::getValue(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (value);
 }
 
-void	Fixed::setRawBits(int const raw)
+void	Fixed::setValue(int const new_val)
 {
-	std::cout << "setRawBits member function called" << std::endl;
-	value = raw;
+	value = new_val;
 }
 
 float	Fixed::toFloat(void) const
 {
-	return (value / 1 << Fixed::fract_bits);
+	return ((float)value / (1 << Fixed::fract_bits));
 }
 
 int		Fixed::toInt(void) const
