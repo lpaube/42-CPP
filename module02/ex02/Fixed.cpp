@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 06:19:08 by laube             #+#    #+#             */
-/*   Updated: 2021/10/04 17:36:45 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/04 17:44:02 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Fixed::Fixed(const Fixed& src)
 Fixed::Fixed(const int num)
 {
 	std::cout << "Int constructor called" << std::endl;
-	value = num << Fixed::fract_bits;
+	value = num << Fixed::fractBits;
 }
 
 /* HOW TO GET FIXED POINT FROM FLOATING POINT:
@@ -38,7 +38,7 @@ Fixed::Fixed(const int num)
 Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called" << std::endl;
-	value = roundf(num * (1 << Fixed::fract_bits));
+	value = roundf(num * (1 << Fixed::fractBits));
 }
 
 // Destructor
@@ -60,12 +60,12 @@ void	Fixed::setValue(int const new_val)
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)value / (1 << Fixed::fract_bits));
+	return ((float)value / (1 << Fixed::fractBits));
 }
 
 int		Fixed::toInt(void) const
 {
-	return (value >> Fixed::fract_bits);
+	return (value >> Fixed::fractBits);
 }
 
 // Operator overloads

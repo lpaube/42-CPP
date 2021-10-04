@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 09:04:19 by laube             #+#    #+#             */
-/*   Updated: 2021/10/04 17:35:35 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/04 17:46:11 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,15 @@ class	Fixed
 {
 	private:
 		int	value;
-		static const int	fract_bits = 8;
+		static const int	fractBits = 8;
 	public:
+		static Fixed&		min(Fixed& fixPoint1, Fixed& fixPoint2);
+		static const Fixed&	min(const Fixed& fixPoint1, const Fixed& fixPoint2);
+
+		static Fixed&		max(Fixed& fixPoint1, Fixed& fixPoint2);
+		static const Fixed&	max(const Fixed& fixPoint1, const Fixed& fixPoint2);
+
+
 		Fixed();	// Canonical
 		Fixed(const Fixed& src);	// Canonical
 		Fixed(const int num);
