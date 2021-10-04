@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 09:04:19 by laube             #+#    #+#             */
-/*   Updated: 2021/10/04 17:46:11 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/04 17:47:28 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class	Fixed
 
 		static Fixed&		max(Fixed& fixPoint1, Fixed& fixPoint2);
 		static const Fixed&	max(const Fixed& fixPoint1, const Fixed& fixPoint2);
-
 
 		Fixed();	// Canonical
 		Fixed(const Fixed& src);	// Canonical
