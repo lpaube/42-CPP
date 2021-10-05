@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:04:35 by laube             #+#    #+#             */
-/*   Updated: 2021/10/05 14:37:45 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/05 15:51:40 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,13 @@ void ClapTrap::beRepaired(unsigned int amount) {
   hitPoints += amount;
   std::cout << name << "has been repaired and recovered " << amount
             << " hit points." << std::endl;
-};
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
+	if (this == &rhs) return (*this);
+	name = rhs.name;
+	hitPoints = rhs.hitPoints;
+	energyPoints = rhs.energyPoints;
+	dmg = rhs.dmg;
+	return (*this);
+}

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 12:04:47 by laube             #+#    #+#             */
-/*   Updated: 2021/10/05 14:38:00 by laube            ###   ########.fr       */
+/*   Created: 2021/10/05 13:20:07 by laube             #+#    #+#             */
+/*   Updated: 2021/10/05 14:47:40 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include <iostream>
 
-int main(void) {
-  ClapTrap *clappy = new ClapTrap("Clappy");
+class ClapTrap {
+ private:
+  std::string name;
+  int hitPoints;
+  int energyPoints;
+  int dmg;
 
-  clappy->attack("Bandit");
-  clappy->takeDamage(3);
-  clappy->beRepaired(2);
-  std::cout << std::endl;
+ public:
+  ClapTrap();
+  ClapTrap(const ClapTrap& src);
+  ClapTrap(std::string newName);
+  ~ClapTrap();
 
-  ClapTrap *claptrap = new ClapTrap;
-  claptrap->attack("Bandit");
-  claptrap->takeDamage(3);
-  claptrap->beRepaired(2);
-  claptrap->takeDamage(4);
-  claptrap->attack("Ghost");
-}
+  ClapTrap& operator=(const ClapTrap& rhs);
+
+  void attack(const std::string& target);
+  void takeDamage(unsigned int amount);
+  void beRepaired(unsigned int amount);
+};
