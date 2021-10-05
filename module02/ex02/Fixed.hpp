@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 09:04:19 by laube             #+#    #+#             */
-/*   Updated: 2021/10/04 17:47:28 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/05 11:17:49 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class	Fixed
 		static const int	fractBits = 8;
 	public:
 		static Fixed&		min(Fixed& fixPoint1, Fixed& fixPoint2);
-		static const Fixed&	min(const Fixed& fixPoint1, const Fixed& fixPoint2);
-
 		static Fixed&		max(Fixed& fixPoint1, Fixed& fixPoint2);
+
+		static const Fixed&	min(const Fixed& fixPoint1, const Fixed& fixPoint2);
 		static const Fixed&	max(const Fixed& fixPoint1, const Fixed& fixPoint2);
 
 		Fixed();	// Canonical
@@ -44,6 +44,10 @@ class	Fixed
 		Fixed	operator-(const Fixed& rhs);
 		Fixed	operator*(const Fixed& rhs);
 		Fixed	operator/(const Fixed& rhs);
+		Fixed&	operator++();
+		Fixed	operator++(int);
+		Fixed&	operator--();
+		Fixed	operator--(int);
 
 		int		getValue(void) const;
 		void	setValue(int const new_val);

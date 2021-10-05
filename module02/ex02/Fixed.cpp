@@ -6,48 +6,45 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 06:19:08 by laube             #+#    #+#             */
-/*   Updated: 2021/10/04 17:44:02 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/05 11:40:07 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-// Constructors
+/*
+ * CONSTRUCTORS
+ */
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
 	value = 0;
 }
 
 Fixed::Fixed(const Fixed& src)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	value = src.value;
 }
 
 Fixed::Fixed(const int num)
 {
-	std::cout << "Int constructor called" << std::endl;
 	value = num << Fixed::fractBits;
 }
 
-/* HOW TO GET FIXED POINT FROM FLOATING POINT:
-** https://stackoverflow.com/questions/3402702/converting-floating-point-to-32-bit-fixed-point-in-java
-*/
-
 Fixed::Fixed(const float num)
 {
-	std::cout << "Float constructor called" << std::endl;
 	value = roundf(num * (1 << Fixed::fractBits));
 }
 
-// Destructor
+/*
+ * DESTRUCTOR
+ */
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
-// Member functions
+/*
+ * MEMBER FUNCTIONS
+ */
 int	Fixed::getValue(void) const
 {
 	return (value);
@@ -68,16 +65,40 @@ int		Fixed::toInt(void) const
 	return (value >> Fixed::fractBits);
 }
 
-// Operator overloads
-Fixed&	Fixed::operator=(const Fixed& rhs)
+/*
+ * STATIC MEMBER FUNCTIONS
+ */
+Fixed&	Fixed::min(Fixed& fixPoint1, Fixed& fixPoint2)
 {
-	std::cout << "Assignation operator called" << std::endl;
-	if (this == &rhs)
-		return (*this);
-	value = rhs.value;
-	return (*this);
+	if (fixPoint1.value < fixPoint2.value)
+		return (fixPoint1);
+	return (fixPoint2);
 }
 
+Fixed&	Fixed::max(Fixed& fixPoint1, Fixed& fixPoint2)
+{
+	if (fixPoint1.value > fixPoint2.value)
+		return (fixPoint1);
+	return (fixPoint2);
+}
+
+const Fixed&	Fixed::min(const Fixed& fixPoint1, const Fixed& fixPoint2)
+{
+	if (fixPoint1.value < fixPoint2.value)
+		return (fixPoint1);
+	return (fixPoint2);
+}
+
+const Fixed&	Fixed::max(const Fixed& fixPoint1, const Fixed& fixPoint2)
+{
+	if (fixPoint1.value > fixPoint2.value)
+		return (fixPoint1);
+	return (fixPoint2);
+}
+
+/*
+ * COMPARISON OPERATORS OVERLOAD
+ */
 int	Fixed::operator>(const Fixed& rhs)
 {
 	if (this->value > rhs.getValue())
@@ -120,6 +141,9 @@ int	Fixed::operator!=(const Fixed& rhs)
 	return (0);
 }
 
+/*
+ * ARITHMETIC OPERATORS OVERLOAD
+ */
 Fixed	Fixed::operator+(const Fixed& rhs)
 {
 	return (Fixed(this->toFloat() + rhs.toFloat()));
@@ -140,6 +164,45 @@ Fixed	Fixed::operator/(const Fixed& rhs)
 	return (Fixed(this->toFloat() / rhs.toFloat()));
 }
 
+Fixed&	Fixed::operator++()
+{
+	this->value++;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed tmp = *this;
+	++*this;
+	return (tmp);
+}
+
+Fixed&	Fixed::operator--()
+{
+	this->value--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed tmp = *this;
+	--*this;
+	return (tmp);
+}
+/*
+ * ASSIGNMENT OPERATOR OVERLOAD
+ */
+Fixed&	Fixed::operator=(const Fixed& rhs)
+{
+	if (this == &rhs)
+		return (*this);
+	value = rhs.value;
+	return (*this);
+}
+
+/*
+ * OSTREAM OPERATORS OVERLOAD
+ */
 std::ostream& operator<<(std::ostream& op, Fixed const& rhs)
 {
 	op << rhs.toFloat();
