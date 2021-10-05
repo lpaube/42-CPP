@@ -11,50 +11,50 @@
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-# define FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 
-class	Fixed
-{
-	private:
-		int	value;
-		static const int	fractBits = 8;
-	public:
-		static Fixed&		min(Fixed& fixPoint1, Fixed& fixPoint2);
-		static Fixed&		max(Fixed& fixPoint1, Fixed& fixPoint2);
+class Fixed {
+ private:
+  int value;
+  static const int fractBits = 8;
 
-		static const Fixed&	min(const Fixed& fixPoint1, const Fixed& fixPoint2);
-		static const Fixed&	max(const Fixed& fixPoint1, const Fixed& fixPoint2);
+ public:
+  static Fixed& min(Fixed& fixPoint1, Fixed& fixPoint2);
+  static Fixed& max(Fixed& fixPoint1, Fixed& fixPoint2);
 
-		Fixed();	// Canonical
-		Fixed(const Fixed& src);	// Canonical
-		Fixed(const int num);
-		Fixed(const float num);
-		~Fixed();	// Canonical
+  static const Fixed& min(const Fixed& fixPoint1, const Fixed& fixPoint2);
+  static const Fixed& max(const Fixed& fixPoint1, const Fixed& fixPoint2);
 
-		Fixed& 	operator=(const Fixed& rhs); // Canonical
-		int		operator>(const Fixed& rhs);
-		int		operator<(const Fixed& rhs);
-		int		operator>=(const Fixed& rhs);
-		int		operator<=(const Fixed& rhs);
-		int		operator==(const Fixed& rhs);
-		int		operator!=(const Fixed& rhs);
-		Fixed	operator+(const Fixed& rhs);
-		Fixed	operator-(const Fixed& rhs);
-		Fixed	operator*(const Fixed& rhs);
-		Fixed	operator/(const Fixed& rhs);
-		Fixed&	operator++();
-		Fixed	operator++(int);
-		Fixed&	operator--();
-		Fixed	operator--(int);
+  Fixed();                  // Canonical
+  Fixed(const Fixed& src);  // Canonical
+  Fixed(const int num);
+  Fixed(const float num);
+  ~Fixed();  // Canonical
 
-		int		getValue(void) const;
-		void	setValue(int const new_val);
-		float	toFloat(void) const;
-		int		toInt(void) const;
+  Fixed& operator=(const Fixed& rhs);  // Canonical
+  int operator>(const Fixed& rhs);
+  int operator<(const Fixed& rhs);
+  int operator>=(const Fixed& rhs);
+  int operator<=(const Fixed& rhs);
+  int operator==(const Fixed& rhs);
+  int operator!=(const Fixed& rhs);
+  Fixed operator+(const Fixed& rhs);
+  Fixed operator-(const Fixed& rhs);
+  Fixed operator*(const Fixed& rhs);
+  Fixed operator/(const Fixed& rhs);
+  Fixed& operator++();
+  Fixed operator++(int);
+  Fixed& operator--();
+  Fixed operator--(int);
+
+  int getValue(void) const;
+  void setValue(int const new_val);
+  float toFloat(void) const;
+  int toInt(void) const;
 };
 
-std::ostream& operator<<(std::ostream & op, Fixed const & rhs);
+std::ostream& operator<<(std::ostream& op, Fixed const& rhs);
 
 #endif
