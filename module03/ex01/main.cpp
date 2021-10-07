@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:04:47 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 11:58:33 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/07 12:02:50 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int main(void) {
   scavtrap->beRepaired(2);
   scavtrap->takeDamage(4);
   scavtrap->attack("Ghost");
+  scavtrap->guardGate();
   delete scavtrap;
 }
