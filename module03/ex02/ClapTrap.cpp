@@ -29,9 +29,9 @@ ClapTrap::ClapTrap() {
 }
 
 ClapTrap::ClapTrap(const ClapTrap& src) {
-	hitPoints = src.hitPoints;
-	energyPoints = src.energyPoints;
-	dmg = src.dmg;
+  hitPoints = src.hitPoints;
+  energyPoints = src.energyPoints;
+  dmg = src.dmg;
 }
 
 ClapTrap::~ClapTrap() {
@@ -56,10 +56,10 @@ void ClapTrap::beRepaired(unsigned int amount) {
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
-	if (this == &rhs) return (*this);
-	name = rhs.name;
-	hitPoints = rhs.hitPoints;
-	energyPoints = rhs.energyPoints;
-	dmg = rhs.dmg;
-	return (*this);
+  if (this == &rhs) return (*this);
+  name = rhs.name;
+  hitPoints = rhs.hitPoints;
+  energyPoints = rhs.energyPoints;
+  dmg = rhs.dmg;
+  return (*this);
 }

@@ -13,45 +13,42 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
-	name = "FragTrap";
-	hitPoints = 100;
-	energyPoints = 100;
-	dmg = 30;
-	std::cout << "A ScavTrap has been upgraded to a FragTrap!"
-			  << std::endl;
+  name = "FragTrap";
+  hitPoints = 100;
+  energyPoints = 100;
+  dmg = 30;
+  std::cout << "A ScavTrap has been upgraded to a FragTrap!" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) {
-	this->name = name;
-	hitPoints = 100;
-	energyPoints = 100;
-	dmg = 30;
-	std::cout << "A ScavTrap has been upgraded to a FragTrap!"
-			  << std::endl;
+  this->name = name;
+  hitPoints = 100;
+  energyPoints = 100;
+  dmg = 30;
+  std::cout << "A ScavTrap has been upgraded to a FragTrap!" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& src) {
-	name = src.name;
-	hitPoints = src.hitPoints;
-	energyPoints = src.energyPoints;
-	dmg = src.dmg;
-	std::cout << "A ScavTrap has been upgraded to a FragTrap!"
-			  << std::endl;
+  name = src.name;
+  hitPoints = src.hitPoints;
+  energyPoints = src.energyPoints;
+  dmg = src.dmg;
+  std::cout << "A ScavTrap has been upgraded to a FragTrap!" << std::endl;
 }
 
 FragTrap::~FragTrap() {
-	std::cout << name << " has been downgraded to a ScavTrap." << std::endl;
+  std::cout << name << " has been downgraded to a ScavTrap." << std::endl;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& rhs) {
-    if (this == &rhs) return (*this);
-	name = rhs.name;
-	hitPoints = rhs.hitPoints;
-	energyPoints = rhs.energyPoints;
-	dmg = rhs.dmg;
-	return (*this);
+  if (this == &rhs) return (*this);
+  name = rhs.name;
+  hitPoints = rhs.hitPoints;
+  energyPoints = rhs.energyPoints;
+  dmg = rhs.dmg;
+  return (*this);
 }
 
-void	FragTrap::highFivesGuys(void) {
-	std::cout << name << ": High five guys!!  ....  guys?..." << std::endl;
+void FragTrap::highFivesGuys(void) {
+  std::cout << name << ": High five guys!!  ....  guys?..." << std::endl;
 }

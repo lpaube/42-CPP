@@ -13,25 +13,26 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
-	name = "ScavTrap";
-	hitPoints = 100;
-	energyPoints = 50;
-	dmg = 20;
-	std::cout << name << " has been upgraded to a ScavTrap!" << std::endl;
+  name = "ScavTrap";
+  hitPoints = 100;
+  energyPoints = 50;
+  dmg = 20;
+  std::cout << name << " has been upgraded to a ScavTrap!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-	this->name = name;
-	hitPoints = 100;
-	energyPoints = 50;
-	dmg = 20;
-	std::cout << name << " has been upgraded to a ScavTrap!" << std::endl;
+  this->name = name;
+  hitPoints = 100;
+  energyPoints = 50;
+  dmg = 20;
+  std::cout << name << " has been upgraded to a ScavTrap!" << std::endl;
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << name << " has lost its upgrade and is now a basic ClapTrap." << std::endl;
+  std::cout << name << " has lost its upgrade and is now a basic ClapTrap."
+            << std::endl;
 }
 
-void	ScavTrap::guardGate() {
-	std::cout << name << " is now in 'Gate Keeper' mode." << std::endl;
+void ScavTrap::guardGate() {
+  std::cout << name << " is now in 'Gate Keeper' mode." << std::endl;
 }

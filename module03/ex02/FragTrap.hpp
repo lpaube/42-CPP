@@ -14,18 +14,19 @@
 #define FRAGTRAP_HPP
 
 #include <iostream>
+
 #include "ScavTrap.hpp"
 
 class FragTrap : public ScavTrap {
-	public:
-		FragTrap();
-		FragTrap(std::string name);
-		FragTrap(const FragTrap& src);
-		~FragTrap();
+ public:
+  FragTrap();
+  FragTrap(std::string name);
+  FragTrap(const FragTrap& src);
+  ~FragTrap();
 
-		FragTrap& operator=(const FragTrap& rhs);
+  FragTrap& operator=(const FragTrap& rhs);
 
-		void highFivesGuys(void);
+  void highFivesGuys(void);
 };
 
 #endif

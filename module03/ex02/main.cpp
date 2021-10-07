@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void) {
   FragTrap *fragy = new FragTrap("Fragy");
@@ -27,7 +27,7 @@ int main(void) {
   delete dummy;
   std::cout << std::endl;
 
-  ScavTrap* fragtrap = new ScavTrap;
+  ScavTrap *fragtrap = new ScavTrap;
   fragtrap->attack("Bandit");
   fragtrap->takeDamage(3);
   fragtrap->beRepaired(2);
