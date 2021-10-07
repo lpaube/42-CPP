@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:04:35 by laube             #+#    #+#             */
-/*   Updated: 2021/10/06 14:16:47 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/07 11:59:00 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(std::string newName) {
   hitPoints = 10;
   energyPoints = 10;
   dmg = 0;
-  std::cout << name << " now in service!" << std::endl;
+  std::cout << "Basic ClapTrap '" << name << "' now in service!" << std::endl;
 }
 
 ClapTrap::ClapTrap() {
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap() {
   hitPoints = 10;
   energyPoints = 10;
   dmg = 0;
-  std::cout << name << " now in service!" << std::endl;
+  std::cout << "Basic ClapTrap '" << name << "' now in service!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& src) {
@@ -35,7 +35,7 @@ ClapTrap::ClapTrap(const ClapTrap& src) {
 }
 
 ClapTrap::~ClapTrap() {
-  std::cout << name << " has been Epsteined (destroyed)." << std::endl;
+  std::cout << name << " has been destroyed." << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) {
@@ -51,7 +51,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 
 void ClapTrap::beRepaired(unsigned int amount) {
   hitPoints += amount;
-  std::cout << name << "has been repaired and recovered " << amount
+  std::cout << name << " has been repaired and recovered " << amount
             << " hit points." << std::endl;
 }
 

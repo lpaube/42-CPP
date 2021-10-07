@@ -6,24 +6,27 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:04:47 by laube             #+#    #+#             */
-/*   Updated: 2021/10/05 14:37:27 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/07 11:58:33 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void) {
-  ClapTrap *clappy = new ClapTrap("Clappy");
+  ScavTrap *scavy = new ScavTrap("Scavy");
 
-  clappy->attack("Bandit");
-  clappy->takeDamage(3);
-  clappy->beRepaired(2);
+  scavy->attack("Bandit");
+  scavy->takeDamage(3);
+  scavy->beRepaired(2);
+  delete scavy;
   std::cout << std::endl;
 
-  ClapTrap *claptrap = new ClapTrap;
-  claptrap->attack("Bandit");
-  claptrap->takeDamage(3);
-  claptrap->beRepaired(2);
-  claptrap->takeDamage(4);
-  claptrap->attack("Ghost");
+  ScavTrap* scavtrap = new ScavTrap;
+  scavtrap->attack("Bandit");
+  scavtrap->takeDamage(3);
+  scavtrap->beRepaired(2);
+  scavtrap->takeDamage(4);
+  scavtrap->attack("Ghost");
+  delete scavtrap;
 }

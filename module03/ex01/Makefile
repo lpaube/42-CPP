@@ -1,8 +1,8 @@
-NAME =	claptrap
+NAME =	scavtrap
 
 OBJ_DIR =	objs
 
-SRCS =	main.cpp ClapTrap.cpp 
+SRCS =	main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS =	$(SRCS:.cpp=.o)
 
 OBJS_PATH =	$(addprefix $(OBJ_DIR)/, $(OBJS))
@@ -12,7 +12,7 @@ CFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(OBJ_DIR) $(OBJS_PATH)
 	$(CC) $(OBJS_PATH) -o $(NAME)
-	@echo "\\n\033[32;1m CLAPTRAP HAS BEEN GENERATED \033[0m \\n"
+	@echo "\\n\033[32;1m SCAVTRAP HAS BEEN GENERATED \033[0m \\n"
 
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
@@ -29,7 +29,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	@echo "\033[34;1m CLEANED CLAPTRAP \033[0m"
+	@echo "\033[34;1m CLEANED SCAVTRAP \033[0m"
 
 re: fclean all
 
