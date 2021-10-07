@@ -14,7 +14,7 @@
 #include "ScavTrap.hpp"
 
 int main(void) {
-  ScavTrap *scavy = new ScavTrap("Scavy");
+  ScavTrap* scavy = new ScavTrap("Scavy");
 
   scavy->attack("Bandit");
   scavy->takeDamage(3);
