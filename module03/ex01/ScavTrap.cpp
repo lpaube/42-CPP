@@ -6,8 +6,15 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:01:04 by laube             #+#    #+#             */
-/*   Updated: 2021/10/05 14:04:00 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/06 14:39:35 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap() {
+	name = "ScavTrap";
+	hitPoints = 100;
+	energyPoints = 50;
+	dmg = 20;
+}

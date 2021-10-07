@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:04:35 by laube             #+#    #+#             */
-/*   Updated: 2021/10/05 15:51:40 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/06 14:16:47 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ ClapTrap::ClapTrap() {
   energyPoints = 10;
   dmg = 0;
   std::cout << name << " now in service!" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& src) {
+	hitPoints = src.hitPoints;
+	energyPoints = src.energyPoints;
+	dmg = src.dmg;
 }
 
 ClapTrap::~ClapTrap() {
