@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:04:35 by laube             #+#    #+#             */
-/*   Updated: 2021/10/06 14:20:34 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/07 12:00:25 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ClapTrap::ClapTrap(const ClapTrap& src) {
 }
 
 ClapTrap::~ClapTrap() {
-  std::cout << name << " has been Epsteined (destroyed)." << std::endl;
+  std::cout << name << " has been destroyed." << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) {
@@ -51,7 +51,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 
 void ClapTrap::beRepaired(unsigned int amount) {
   hitPoints += amount;
-  std::cout << name << "has been repaired and recovered " << amount
+  std::cout << name << " has been repaired and recovered " << amount
             << " hit points." << std::endl;
 };
 
