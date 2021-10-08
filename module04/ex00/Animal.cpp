@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 15:03:03 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 23:12:19 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/08 10:58:18 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Animal::Animal() {
 }
 
 Animal::Animal(const Animal& src) {
+	type = src.type;
 	std::cout << "An animal has been born!" << std::endl;
 }
 
@@ -26,17 +27,20 @@ Animal::~Animal() {
 
 Animal& Animal::operator=(const Animal& rhs) {
 	if (this == &rhs) return (*this);
+	type = rhs.type;
 	return (*this);
 }
 
-void Animal::makeSound() {
-	if (type.size() != 0)
-		std::cout << "This animal is a " << type << std::endl;
-	else
-		std::cout << "This is an undifferentiated animal." << std::endl;
+void Animal::makeSound() const {
+	if (type.size() == 0)
+		std::cout << "This animal is of the silent type..." << type << std::endl;
+	else if (type.compare("Dog") == 0)
+		std::cout << "Woof" << std::endl;
+	else if (type.compare("Cat") == 0)
+		std::cout << "Miaou" << std::endl;
 }
 
-const std::string Animal::getType() {
+const std::string Animal::getType() const {
 	return (this->type);
 }
 

@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:47:23 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 22:55:29 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/08 10:53:23 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog() {
 }
 
 Dog::Dog(const Dog& src) {
-	type = "Dog";
+	type = src.type;
 	std::cout << "The animal is a dog!" << std::endl;
 }
 
