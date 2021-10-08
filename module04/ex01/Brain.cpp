@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 22:47:23 by laube             #+#    #+#             */
-/*   Updated: 2021/10/08 14:02:13 by laube            ###   ########.fr       */
+/*   Created: 2021/10/08 13:15:01 by laube             #+#    #+#             */
+/*   Updated: 2021/10/08 13:37:45 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Brain.hpp"
 
-Dog::Dog() {
-	type = "Dog";
-	brain = new Brain();
-	std::cout << "The animal is a dog!" << std::endl;
+Brain::Brain() {
 }
 
-Dog::Dog(const Dog& src) {
-	type = src.type;
-	brain = new Brain;
-	*brain = *(src.brain);
-	std::cout << "The animal is a dog!" << std::endl;
+Brain::Brain(const Brain& src) {
 }
 
-Dog::~Dog() {
-	delete brain;
-	std::cout << "Dog Is Dead" << std::endl;
+Brain::~Brain() {
 }
 
-Dog& Dog::operator=(const Dog& rhs) {
+Brain& Brain::operator=(const Brain& rhs) {
 	if (this == &rhs) return (*this);
-	type = rhs.type;
-	brain = new Brain;
-	*brain = *(rhs.brain);
 	return (*this);
 }

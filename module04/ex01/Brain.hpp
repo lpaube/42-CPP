@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 22:44:26 by laube             #+#    #+#             */
-/*   Updated: 2021/10/08 13:35:30 by laube            ###   ########.fr       */
+/*   Created: 2021/10/08 13:24:42 by laube             #+#    #+#             */
+/*   Updated: 2021/10/08 14:05:47 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
 
-class Dog : public Animal {
-	private:
-		Brain* brain;
+class Brain {
 	public:
-		Dog();
-		Dog(const Dog& src);
-		~Dog();
+		Brain();
+		Brain(const Brain& src);
+		~Brain();
 
-		Dog& operator=(const Dog& rhs);
+		Brain& operator=(const Brain& rhs);
+
+		std::string ideas[100];
 };
 
 #endif

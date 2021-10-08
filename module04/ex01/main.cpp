@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:56:57 by laube             #+#    #+#             */
-/*   Updated: 2021/10/08 11:25:31 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/08 15:52:47 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "WrongCat.hpp"
 
 int main() {
+	/*
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -39,4 +40,17 @@ int main() {
 	const WrongAnimal* c = new WrongCat();
 	c->makeSound();
 	delete c;
+	*/
+
+	int amt = 6;
+	int	i = 0;
+	Animal *animals;
+	animals = new Animal[amt];
+	for (int x = 0; x < 6; x++) {
+		while (i < amt / 2) {
+			animals[i] = new Cat();
+			i++;
+		}
+	}
+
 }
