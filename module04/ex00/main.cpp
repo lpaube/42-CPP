@@ -6,13 +6,15 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:56:57 by laube             #+#    #+#             */
-/*   Updated: 2021/10/08 11:03:35 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/08 11:25:31 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main() {
 	const Animal* meta = new Animal();
@@ -32,4 +34,9 @@ int main() {
 	delete meta;
 	delete j;
 	delete i;
+
+	std::cout << std::endl;
+	const WrongAnimal* c = new WrongCat();
+	c->makeSound();
+	delete c;
 }

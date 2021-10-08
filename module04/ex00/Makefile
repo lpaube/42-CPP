@@ -2,7 +2,7 @@ NAME =	animal
 
 OBJ_DIR =	objs
 
-SRCS =	main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS =	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS =	$(SRCS:.cpp=.o)
 
 OBJS_PATH =	$(addprefix $(OBJ_DIR)/, $(OBJS))
