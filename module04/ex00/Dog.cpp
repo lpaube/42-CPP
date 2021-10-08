@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 22:56:57 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 22:59:12 by laube            ###   ########.fr       */
+/*   Created: 2021/10/07 22:47:23 by laube             #+#    #+#             */
+/*   Updated: 2021/10/07 22:55:29 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
 #include "Dog.hpp"
 
-int main() {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+Dog::Dog() {
+	type = "Dog";
+	std::cout << "The animal is a dog!" << std::endl;
+}
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+Dog::Dog(const Dog& src) {
+	type = "Dog";
+	std::cout << "The animal is a dog!" << std::endl;
+}
 
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+Dog::~Dog() {
+	std::cout << "Dog Is Dead" << std::endl;
+}
+
+Dog& Dog::operator=(const Dog& rhs) {
+	if (this == &rhs) return (*this);
+	type = rhs.type;
+	return (*this);
 }

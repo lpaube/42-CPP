@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 22:56:57 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 22:59:12 by laube            ###   ########.fr       */
+/*   Created: 2021/10/07 22:44:26 by laube             #+#    #+#             */
+/*   Updated: 2021/10/07 22:46:13 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DOG_HPP
+#define DOG_HPP
+
 #include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
 
-int main() {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+class Dog : public Animal {
+	public:
+		Dog();
+		Dog(const Dog& src);
+		~Dog();
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+		Dog& operator=(const Dog& rhs);
+};
 
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-}
+#endif
