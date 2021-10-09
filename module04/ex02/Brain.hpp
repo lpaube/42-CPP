@@ -16,14 +16,14 @@
 #include <iostream>
 
 class Brain {
-	public:
-		Brain();
-		Brain(const Brain& src);
-		~Brain();
+ public:
+  Brain();
+  Brain(const Brain& src);
+  ~Brain();
 
-		Brain& operator=(const Brain& rhs);
+  Brain& operator=(const Brain& rhs);
 
-		std::string ideas[100];
+  std::string ideas[100];
 };
 
 #endif

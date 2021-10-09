@@ -12,29 +12,21 @@
 
 #include "Animal.hpp"
 
-Animal::Animal() {
-	std::cout << "An animal has been born!" << std::endl;
-}
+Animal::Animal() { std::cout << "An animal has been born!" << std::endl; }
 
 Animal::Animal(const Animal& src) {
-	type = src.type;
-	std::cout << "An animal has been born!" << std::endl;
+  type = src.type;
+  std::cout << "An animal has been born!" << std::endl;
 }
 
-Animal::~Animal() {
-	std::cout << "An animal has died!" << std::endl;
-}
+Animal::~Animal() { std::cout << "An animal has died!" << std::endl; }
 
 Animal& Animal::operator=(const Animal& rhs) {
-	if (this == &rhs) return (*this);
-	type = rhs.type;
-	return (*this);
+  if (this == &rhs) return (*this);
+  type = rhs.type;
+  return (*this);
 }
 
-const std::string Animal::getType() const {
-	return (this->type);
-}
+const std::string Animal::getType() const { return (this->type); }
 
-void Animal::setType(std::string type) {
-	this->type = type;
-}
+void Animal::setType(std::string type) { this->type = type; }

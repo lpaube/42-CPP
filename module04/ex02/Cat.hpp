@@ -17,17 +17,18 @@
 #include "Brain.hpp"
 
 class Cat : public Animal {
-	private:
-		Brain* brain;
-	public:
-		Cat();
-		Cat(const Cat& src);
-		~Cat();
+ private:
+  Brain* brain;
 
-		Cat& operator=(const Cat& rhs);
+ public:
+  Cat();
+  Cat(const Cat& src);
+  ~Cat();
 
-		virtual void makeSound() const;
-		std::string* getIdeas() const;
+  Cat& operator=(const Cat& rhs);
+
+  virtual void makeSound() const;
+  std::string* getIdeas() const;
 };
 
 #endif
