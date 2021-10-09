@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:56:57 by laube             #+#    #+#             */
-/*   Updated: 2021/10/09 17:07:29 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/09 17:26:12 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int	main(void) {
 	std::cout << "CREATING 2 ANIMALS\n---------------------" << std::endl;
 	const Dog* doggy = new Dog();
 	const Cat* catty = new Cat();
+	std::cout << std::endl;
+
+	std::cout << "ANIMALS MAKING SOUND\n---------------------" << std::endl;
+	doggy->makeSound();
+	catty->makeSound();
 	std::cout << std::endl;
 
 	std::cout << "PRINTING CAT'S IDEAS\n---------------------" << std::endl;
