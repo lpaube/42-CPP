@@ -6,51 +6,70 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:56:57 by laube             #+#    #+#             */
-/*   Updated: 2021/10/08 15:52:47 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/09 14:22:48 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
-int main() {
-	/*
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
 
+int	main(void) {
+
+	std::cout << "CREATING 2 ANIMALS\n---------------------" << std::endl;
+	const Dog* doggy = new Dog();
+	const Cat* catty = new Cat();
 	std::cout << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
 
-	std::cout << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-
-	std::cout << std::endl;
-	delete meta;
-	delete j;
-	delete i;
-
-	std::cout << std::endl;
-	const WrongAnimal* c = new WrongCat();
-	c->makeSound();
-	delete c;
-	*/
-
-	int amt = 6;
-	int	i = 0;
-	Animal *animals;
-	animals = new Animal[amt];
-	for (int x = 0; x < 6; x++) {
-		while (i < amt / 2) {
-			animals[i] = new Cat();
-			i++;
-		}
+	std::cout << "PRINTING CAT'S IDEAS\n---------------------" << std::endl;
+	for (int i = 0; i < 5; i++) {
+		std::cout << "Idea " << i << ": " << catty->getIdeas()[i] << std::endl;
 	}
+	std::cout << std::endl;
+	std::cout << "PRINTING DOG'S IDEAS\n---------------------" << std::endl;
+	for (int i = 0; i < 5; i++) {
+		std::cout << "Idea " << i << ": " << doggy->getIdeas()[i] << std::endl;
+	}
+	std::cout << std::endl;
 
+	std::cout << "CREATING DEEP COPY FROM ORIGINAL DOGGY\n---------------------" << std::endl;
+	const Dog* doggy_copy = new Dog(*doggy);
+	std::cout << std::endl;
+
+	std::cout << "DELETING ORIGINAL DOGGY\n------------------" << std::endl;
+	delete doggy;
+//	std::cout << "PRINTING ORIGINAL DOGGY IDEA[0]\n------------------" << std::endl;
+//	std::cout << "Idea 0: " << doggy->getIdeas()[0] << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "PRINTING DEEP COPY DOGGY IDEA[0]\n------------------" << std::endl;
+	std::cout << "Idea 0: " << doggy_copy->getIdeas()[0] << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "DELETING COPY DOGGY AND OG CAT\n------------------" << std::endl;
+	delete catty;
+	delete doggy_copy;
+	std::cout << std::endl;
+
+	std::cout << "CREATING ARRAY OF ANIMALS\n---------------------" << std::endl;
+	Animal* animals[10];
+	for (int x = 0; x < 10; x++) {
+		if (x % 2 == 0)
+			animals[x] = new Cat;
+		else
+			animals[x] = new Dog;
+	}
+	std::cout << std::endl;
+
+	std::cout << "PRINTING TYPE OF ANIMALS\n---------------------" << std::endl;
+	for (int x = 0; x < 10; x++) {
+		std::cout << x << ": " << animals[x]->getType() << std::endl;
+	}
+	std::cout << std::endl;
+
+	std::cout << "DELETING ARRAY OF ANIMALS\n---------------------" << std::endl;
+	for (int x = 0; x < 10; x++) {
+		delete animals[x];
+	}
 }

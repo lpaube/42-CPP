@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:44:26 by laube             #+#    #+#             */
-/*   Updated: 2021/10/08 13:35:30 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/09 14:03:43 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class Dog : public Animal {
 		~Dog();
 
 		Dog& operator=(const Dog& rhs);
+
+		std::string* getIdeas() const;
 };
 
 #endif
