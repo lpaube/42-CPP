@@ -6,12 +6,13 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 15:56:56 by laube             #+#    #+#             */
-/*   Updated: 2021/09/24 21:53:25 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/18 17:06:29 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string.h>
+#include <string>
 #include "ContactManager.hpp"
 #include "Contact.hpp"
 
@@ -34,11 +35,11 @@ int	str_match(char *str, const char *match)
 
 int	main(void)
 {
-	char buff[10000];
+	std::string buff;
 	ContactManager	contact_manager;
 
 
-	while (true)
+	while (std::cin.good())
 	{
 		std::cout << std::endl;
 		std::cout << "Please enter one of the following" << std::endl;
@@ -46,12 +47,12 @@ int	main(void)
 		std::cout << "'SEARCH'	: See the informations of a specific contact." << std::endl;
 		std::cout << "'EXIT'		: Closes the directory and deletes all contacts." << std::endl;
 		std::cout << "> ";
-		std::cin >> buff;
-		if (str_match(buff, "ADD"))
+		std::getline(std::cin, buff);
+		if (buff == "ADD")
 			contact_manager.add_contact();
-		else if (str_match(buff, "SEARCH"))
+		else if (buff == "SEARCH")
 			contact_manager.search_contact();
-		else if (str_match(buff, "EXIT"))
+		else if (buff == "EXIT")
 			return (0);
 		else
 			std::cout << "Error: Invalid command" << std::endl;

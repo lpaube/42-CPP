@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:23:07 by laube             #+#    #+#             */
-/*   Updated: 2021/09/24 21:52:48 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/18 17:43:20 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,20 @@ void	ContactManager::add_contact(void)
 	while (i > 0)
 	{
 		this->contacts[i] = this->contacts[i - 1];
-		this->contacts[i].index++;
+		this->contacts[i].incIndex();
 		i--;
 	}
 		this->contacts[0].is_active = 1;
 		std::cout << "Enter FIRST NAME: ";
-		std::getline(std::cin >> std::ws, this->contacts[0].first_name); 
+		std::getline(std::cin >> std::ws, this->contacts[0].getStr("first_name")); 
 		std::cout << "Enter LAST NAME: ";
-		std::getline(std::cin >> std::ws, this->contacts[0].last_name); 
+		std::getline(std::cin >> std::ws, this->contacts[0].getStr("last_name")); 
 		std::cout << "Enter NICKNAME: ";
-		std::getline(std::cin >> std::ws, this->contacts[0].nickname); 
+		std::getline(std::cin >> std::ws, this->contacts[0].getStr("nickname")); 
 		std::cout << "Enter PHONE NUMBER: ";
-		std::getline(std::cin >> std::ws, this->contacts[0].phone_num); 
+		std::getline(std::cin >> std::ws, this->contacts[0].getStr("phone_num")); 
 		std::cout << "Enter SECRET: ";
-		std::getline(std::cin >> std::ws, this->contacts[0].secret); 
+		std::getline(std::cin >> std::ws, this->contacts[0].getStr("secret")); 
 } 
 
 void	ContactManager::get_index(void)
@@ -72,7 +72,7 @@ void	ContactManager::search_contact(void)
 	i = 0;
 	while (this->contacts[i].is_active)
 	{
-		std::cout << "|" << std::setw(10) << this->contacts[i].index;
+		std::cout << "|" << std::setw(10) << this->contacts[i].getInt("index");
 		if (this->contacts[i].first_name.length() > 10)
 			std::cout << "|" << this->contacts[i].first_name.substr(0, 9) << ".";
 		else
