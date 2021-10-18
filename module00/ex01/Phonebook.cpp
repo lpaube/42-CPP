@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactManager.cpp                                 :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
+/*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/21 15:23:07 by laube             #+#    #+#             */
-/*   Updated: 2021/10/18 17:43:20 by laube            ###   ########.fr       */
+/*   Created: 2021/10/18 17:55:14 by laube             #+#    #+#             */
+/*   Updated: 2021/10/18 17:55:16 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ContactManager.hpp"
+#include "Phonebook.hpp"
 
-ContactManager::ContactManager()
+Phonebook::Phonebook()
 {
 	this->contact_amt = 0;
 }
 
-void	ContactManager::add_contact(void)
+void	Phonebook::add_contact(void)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ void	ContactManager::add_contact(void)
 		std::getline(std::cin >> std::ws, this->contacts[0].getStr("secret")); 
 } 
 
-void	ContactManager::get_index(void)
+void	Phonebook::get_index(void)
 {
 	size_t	buff_index;
 
@@ -62,7 +62,7 @@ void	ContactManager::get_index(void)
 	}
 }
 
-void	ContactManager::search_contact(void)
+void	Phonebook::search_contact(void)
 {
 	int	i;
 

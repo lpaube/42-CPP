@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactManager.hpp                                 :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
+/*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 17:25:31 by laube             #+#    #+#             */
-/*   Updated: 2021/09/24 21:52:55 by laube            ###   ########.fr       */
+/*   Created: 2021/10/18 17:55:02 by laube             #+#    #+#             */
+/*   Updated: 2021/10/18 17:55:04 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_MANAGER_HPP
-# define CONTACT_MANAGER_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 # include <iostream>
 # include <string.h>
@@ -20,10 +20,10 @@
 # include "Contact.hpp"
 # include <stdlib.h>
 
-class	ContactManager
+class	Phonebook
 {
 	public:
-		ContactManager();
+		Phonebook();
 		Contact	contacts[8];
 		int		contact_amt;
 
