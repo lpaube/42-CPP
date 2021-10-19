@@ -6,30 +6,33 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:55:02 by laube             #+#    #+#             */
-/*   Updated: 2021/10/18 17:55:04 by laube            ###   ########.fr       */
+/*   Updated: 2021/10/18 23:41:21 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-# include <iostream>
-# include <string.h>
-# include <stdio.h>
-# include <iomanip>
-# include "Contact.hpp"
-# include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-class	Phonebook
-{
-	public:
-		Phonebook();
-		Contact	contacts[8];
-		int		contact_amt;
+#include <iomanip>
+#include <iostream>
 
-		void	add_contact(void);
-		void	get_index(void);
-		void	search_contact(void);
+#include "Contact.hpp"
+
+class Phonebook {
+ private:
+  Contact contacts[8];
+  int contact_amt;
+
+ public:
+  Phonebook();
+
+  void add_contact(void);
+  void get_index(void);
+  void search_contact(void);
 };
 
 #endif
