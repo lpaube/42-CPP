@@ -3,7 +3,8 @@ SRCS =		megaphone.cpp
 OBJS =		megaphone.o
 
 CC =		clang++ 
-CFLAGS =	-Wall -Werror -Wextra -c
+CFLAGS =	-Wall -Werror -Wextra -c -std=c++98
+
 
 all: $(NAME)
 
