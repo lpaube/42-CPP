@@ -1,27 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
+/*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 13:53:57 by laube             #+#    #+#             */
-/*   Updated: 2021/10/30 14:55:01 by laube            ###   ########.fr       */
+/*   Created: 2021/10/24 23:45:24 by laube             #+#    #+#             */
+/*   Updated: 2021/10/24 23:57:31 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
-
-class Karen {
+class DiamondTrap {
     
-    private:
-        void debug(void);
-        void info(void);
-        void warning(void);
-        void error(void);
-    
-    public:
-        void complain(std::string level);
-};
+}
