@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:47:05 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 13:43:12 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/03 14:56:15 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,26 @@ int Bureaucrat::getGrade() const {
 
 void Bureaucrat::incGrade() {
     _grade--;
+	if (this->_grade > 150) {
+		throw Bureaucrat::GradeTooLowException("The grade is too low.");
+	}
+	if (this->_grade < 1) {
+		throw Bureaucrat::GradeTooHighException("The grade is too high.");
+	}
 }
 
 void Bureaucrat::decGrade() {
     _grade++;
+	if (this->_grade > 150) {
+		throw Bureaucrat::GradeTooLowException("The grade is too low.");
+	}
+	if (this->_grade < 1) {
+		throw Bureaucrat::GradeTooHighException("The grade is too high.");
+	}
 }
 
 std::ostream& operator<<(std::ostream& op, Bureaucrat const& rhs) {
-    op << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << "." << std::endl;
+    op << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
     return op;
 }
 
