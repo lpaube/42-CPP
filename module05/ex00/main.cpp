@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 20:15:46 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 15:01:39 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/03 15:03:05 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(void)
 	}
 	catch(std::exception const &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	// Impossible value; rank too low
@@ -43,7 +43,7 @@ int main(void)
 	}
 	catch(std::exception const &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	// Bad increment
@@ -56,7 +56,7 @@ int main(void)
 	}
 	catch(std::exception const &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	// Bad decrement
@@ -69,7 +69,7 @@ int main(void)
 	}
 	catch(std::exception const &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	return (0);
