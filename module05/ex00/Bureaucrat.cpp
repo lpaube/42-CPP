@@ -6,51 +6,60 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:47:05 by laube             #+#    #+#             */
-/*   Updated: 2021/10/30 17:59:18 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/03 13:43:12 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {
-    name = "Generic Bureaucrat"
-    grade = 150;
-}
-
-Bureaucrat::Bureaucrat(std::string name, int grade) {
-    this->name = name;
-    this->grade = grade;
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
+	if (this->_grade > 150) {
+		throw Bureaucrat::GradeTooLowException("The grade is too low.");
+	}
+	if (this->_grade < 1) {
+		throw Bureaucrat::GradeTooHighException("The grade is too high.");
+	}
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& src) {
-    name = src.name;
-    grade = src.grade;
+    _name = src._name;
+    _grade = src._grade;
 }
 
-Bureaucrat::operator=(const Bureaucrat& rhs) {
-    if (this == rhs) return (*this);
-    name = rhs.name;
-    grade = src.grade;
+Bureaucrat::~Bureaucrat() {}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
+    if (this == &rhs) return (*this);
+    _name = rhs._name;
+    _grade = rhs._grade;
     return (*this);
 }
 
-std::string Bureaucrat::getName() {
-    return (name);
+const std::string Bureaucrat::getName() const {
+    return (_name);
 }
 
-int Bureaucrat::getGrade() {
-    return (grade);
+int Bureaucrat::getGrade() const {
+    return (_grade);
 }
 
 void Bureaucrat::incGrade() {
-    grade--;
+    _grade--;
 }
 
 void Bureaucrat::decGrade() {
-    grade++;
+    _grade++;
 }
 
 std::ostream& operator<<(std::ostream& op, Bureaucrat const& rhs) {
-    op << rhs.name << ", bureaucrat grade " << rhs.grade << "." << std::endl;
-    return (op);
+    op << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << "." << std::endl;
+    return op;
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+	return _msg.c_str();
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+	return _msg.c_str();
 }
