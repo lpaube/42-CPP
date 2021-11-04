@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:08:36 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 22:58:46 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/03 23:08:48 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ Form::Form(std::string name, int gradeToSign) : _name(name), _signed(0), _gradeT
 
 Form::Form(std::string name, int gradeToSign, int gradeToExec) :
     _name(name), _signed(0), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec) {
-    if (_gradeToSign < 1 || _gradeToExec < 1)
+    if (_gradeToSign < 1)
         throw Form::GradeTooHighException();
-    if (_gradeToSign > 150 || _gradeToExec > 150)
+    if (_gradeToSign > 150)
         throw Form::GradeTooLowException();
 }
 
