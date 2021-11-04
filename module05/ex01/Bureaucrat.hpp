@@ -6,7 +6,7 @@
 /*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:46:34 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 16:48:50 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/03 18:18:24 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <exception>
 #include <iostream>
 
-#include "Form.hpp"
+class Form;
 
 class Bureaucrat {
     private:

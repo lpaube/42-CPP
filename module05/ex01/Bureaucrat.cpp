@@ -6,11 +6,12 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:47:05 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 16:48:59 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/03 18:21:20 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
 	if (this->_grade > 150) {

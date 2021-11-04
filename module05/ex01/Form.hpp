@@ -6,11 +6,14 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:16:24 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 16:49:41 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/03 22:59:15 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+#include <iostream>
+#include <string>
 
 #include "Bureaucrat.hpp"
 
@@ -23,10 +26,10 @@ class Form {
 
 	public:
 		// Constructors & Destructors
-		Form() : _name("1120-F"), _gradeToSign(1), _gradeToExec(1) {}
-		Form(std::string name) : _name(name), _gradeToSign(1), _gradeToExec(1) {}
-		Form(std::string name, int gradeToSign) : _name(name), _gradeToSign(gradeToSign), _gradeToExec(1) {}
-		Form(std::string name, int gradeToSign, int gradeToExec) : _name(name), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec) {}
+		Form();
+		Form(std::string name);
+		Form(std::string name, int gradeToSign);
+		Form(std::string name, int gradeToSign, int gradeToExec);
 		Form(const Form& src);
 		~Form() {}
 
@@ -37,7 +40,7 @@ class Form {
 		bool getIsSigned() const;
 		int getGradeToSign() const;
 		int getGradeToExec() const;
-		void beSigned(Bureaucrat worker);
+		void beSigned(Bureaucrat& worker);
 
 	class GradeTooHighException : public std::exception {
 		private:
