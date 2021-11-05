@@ -6,21 +6,21 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 12:31:39 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 14:37:10 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/04 22:39:47 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
-  name = "FragTrap";
+  name = "GenericTrap";
   hitPoints = 100;
   energyPoints = 100;
   dmg = 30;
   std::cout << "A ClapTrap has been upgraded to a FragTrap!" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) {
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
   this->name = name;
   hitPoints = 100;
   energyPoints = 100;
@@ -28,7 +28,7 @@ FragTrap::FragTrap(std::string name) {
   std::cout << "A ClapTrap has been upgraded to a FragTrap!" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& src) {
+FragTrap::FragTrap(const FragTrap& src) :ClapTrap(src.name) {
   name = src.name;
   hitPoints = src.hitPoints;
   energyPoints = src.energyPoints;

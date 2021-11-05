@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:04:47 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 13:17:56 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/04 22:37:59 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ int main(void) {
   fragtrap->attack("Ghost");
   fragtrap->guardGate();
   delete fragtrap;
+  std::cout << std::endl;
+
   delete fragy;
 }
