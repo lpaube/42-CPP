@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:04:35 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 11:59:00 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/04 22:24:20 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(std::string newName) {
 }
 
 ClapTrap::ClapTrap() {
-  name = "ClapTrap";
+  name = "GenericTrap";
   hitPoints = 10;
   energyPoints = 10;
   dmg = 0;

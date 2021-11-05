@@ -6,14 +6,14 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:01:04 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 13:21:51 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/04 22:23:36 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
-  name = "ScavTrap";
+  name = "GenericTrap";
   hitPoints = 100;
   energyPoints = 50;
   dmg = 20;
