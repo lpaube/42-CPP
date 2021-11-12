@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:08:36 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 23:08:48 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/12 14:08:00 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "Form.hpp"
 
-Form::Form() : _name("1120-F"), _signed(0) ,_gradeToSign(1), _gradeToExec(1) {}
+Form::Form() : _name("Gen-F"), _signed(0) ,_gradeToSign(1), _gradeToExec(1) {}
 
 Form::Form(std::string name) : _name(name), _signed(0), _gradeToSign(1), _gradeToExec(1) {}
 

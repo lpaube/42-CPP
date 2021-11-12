@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:47:05 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 18:21:20 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/12 15:28:34 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 	}
 }
 
-Bureaucrat::~Bureaucrat() {}
-
 Bureaucrat::Bureaucrat(const Bureaucrat& src) {
     _name = src._name;
     _grade = src._grade;
 }
+
+Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
     if (this == &rhs) return (*this);
@@ -76,7 +76,7 @@ void Bureaucrat::signForm(Form& form) {
 }
 
 std::ostream& operator<<(std::ostream& op, Bureaucrat const& rhs) {
-    op << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
+    op << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << "." << std::endl;
     return op;
 }
 
