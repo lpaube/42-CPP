@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 20:15:46 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 15:03:05 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/12 15:10:32 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int main(void)
 	// Impossible value; rank too low
 	try
 	{
-			Bureaucrat jack("Jonathan", 1000);
-			std::cout << jack << std::endl;
+        Bureaucrat jack("Jonathan", 1000);
+        std::cout << jack << std::endl;
 	}
 	catch(std::exception const &e)
 	{

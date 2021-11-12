@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:47:05 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 14:56:15 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/12 15:56:18 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void Bureaucrat::decGrade() {
 }
 
 std::ostream& operator<<(std::ostream& op, Bureaucrat const& rhs) {
-    op << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
+    op << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << "." << std::endl;
     return op;
 }
 
