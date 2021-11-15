@@ -6,7 +6,7 @@
 /*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 17:49:30 by laube             #+#    #+#             */
-/*   Updated: 2021/11/12 22:41:38 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/14 19:08:29 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs) {
-    (void)rhs;
+    Form::operator=(rhs);
+    _target = rhs._target;
     return (*this);
 }
 

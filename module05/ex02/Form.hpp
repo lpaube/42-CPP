@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:16:24 by laube             #+#    #+#             */
-/*   Updated: 2021/11/12 21:46:54 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/14 18:02:44 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Form {
 		int getGradeToSign() const;
 		int getGradeToExec() const;
 		void beSigned(Bureaucrat& worker);
-        virtual void execute(Bureaucrat const& executor) const;
+        virtual void execute(Bureaucrat const& executor) const = 0;
 
         class GradeTooHighException : public std::exception {
             private:
