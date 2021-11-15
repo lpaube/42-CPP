@@ -6,7 +6,7 @@
 /*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:46:34 by laube             #+#    #+#             */
-/*   Updated: 2021/11/14 19:15:08 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/15 11:46:13 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Bureaucrat {
         void incGrade();
         void decGrade();
 		void signForm(Form& form);
-        void executeForm(Form const & form);
+        void executeForm(Form const& form);
 
 		class GradeTooHighException : public std::exception {
 			private:

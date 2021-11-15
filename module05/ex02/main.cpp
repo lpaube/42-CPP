@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 20:15:46 by laube             #+#    #+#             */
-/*   Updated: 2021/11/14 18:59:46 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/15 12:26:10 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,55 @@ int main(void)
         myForm.execute(john);
         std::cout << "*Form executed*" << std::endl;
     }
+    catch (const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << std::endl;
+
+	// EXECUTION FROM BUREAUCRAT
+	std::cout << ">>> TESTING EXECUTION FROM BUREAUCRAT\n--------------" << std::endl;
+	try
+	{
+		PresidentialPardonForm myForm("Marc");
+		Bureaucrat will("Will", 1);
+
+		will.signForm(myForm);
+		will.executeForm(myForm);
+	}
+    catch (const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << std::endl;
+
+	// ERROR: GRADE NOT HIGH ENOUGH
+	std::cout << ">>> ERROR: GRADE NOT HIGH ENOUGH\n--------------" << std::endl;
+	try
+	{
+		PresidentialPardonForm myForm("Marc");
+		Bureaucrat will("Will", 149);
+
+		will.signForm(myForm);
+		will.executeForm(myForm);
+	}
+    catch (const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << std::endl;
+
+	// ERROR: FORM NOT SIGNED
+	std::cout << ">>> ERROR: FORM NOT SIGNED\n--------------" << std::endl;
+	try
+	{
+		PresidentialPardonForm myForm("Marc");
+		Bureaucrat will("Will", 1);
+
+		will.executeForm(myForm);
+		will.signForm(myForm);
+		will.executeForm(myForm);
+	}
     catch (const std::exception& e)
     {
         std::cerr << e.what() << std::endl;

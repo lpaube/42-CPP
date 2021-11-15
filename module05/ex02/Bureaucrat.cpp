@@ -6,7 +6,7 @@
 /*   By: laube <louis-philippe.aube@hotmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:47:05 by laube             #+#    #+#             */
-/*   Updated: 2021/11/12 15:28:34 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/15 12:23:56 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,14 @@ void Bureaucrat::signForm(Form& form) {
 		std::cout << _name << " signs " << form.getName() << std::endl;
 		form.beSigned(*this);
 	}
+}
+
+void Bureaucrat::executeForm(Form const& form) {
+	if (form.getIsSigned() == 1 && this->_grade <= form.getGradeToSign() && this->_grade <= form.getGradeToExec())
+	{
+		std::cout << this->_name << " executes " << form.getName() << std::endl;
+	}
+	form.execute(*this);
 }
 
 std::ostream& operator<<(std::ostream& op, Bureaucrat const& rhs) {
