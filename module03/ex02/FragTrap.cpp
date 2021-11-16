@@ -6,13 +6,13 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 12:31:39 by laube             #+#    #+#             */
-/*   Updated: 2021/11/04 22:39:47 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/15 21:50:20 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() {
+FragTrap::FragTrap() : ClapTrap("GenericTrap") {
   name = "GenericTrap";
   hitPoints = 100;
   energyPoints = 100;
@@ -51,4 +51,9 @@ FragTrap& FragTrap::operator=(const FragTrap& rhs) {
 
 void FragTrap::highFivesGuys(void) {
   std::cout << name << ": High five guys!!  ....  guys?..." << std::endl;
+}
+
+void FragTrap::attack(const std::string& target) {
+  std::cout << name << " throws frag grenade on " << target << ", causing " << dmg
+            << " points of damage!" << std::endl;
 }

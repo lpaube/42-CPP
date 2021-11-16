@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 12:34:13 by laube             #+#    #+#             */
-/*   Updated: 2021/11/03 14:32:57 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/15 21:50:53 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class FragTrap : public ClapTrap {
   FragTrap& operator=(const FragTrap& rhs);
 
   void highFivesGuys(void);
+  virtual void attack(const std::string& target);
 };
 
 #endif

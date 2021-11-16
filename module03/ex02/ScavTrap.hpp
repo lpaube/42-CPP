@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:01:27 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 13:21:59 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/15 20:47:57 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ class ScavTrap : public ClapTrap {
   ScavTrap();
   ScavTrap(const ScavTrap& src);
   ScavTrap(std::string name);
-  ~ScavTrap();
+  virtual ~ScavTrap();
 
   ScavTrap& operator=(const ScavTrap& rhs);
 
+  virtual void attack(const std::string& target);
   void guardGate();
 };
 
