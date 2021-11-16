@@ -6,33 +6,54 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:01:04 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 11:46:42 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/16 14:07:21 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() {
-  name = "ScavTrap";
-  hitPoints = 100;
-  energyPoints = 50;
-  dmg = 20;
-  std::cout << name << " has been upgraded to a ScavTrap!" << std::endl;
+ScavTrap::ScavTrap() : ClapTrap("GenericTrap") {
+  this->name = "GenericTrap";
+  this->hitPoints = 100;
+  this->energyPoints = 50;
+  this->dmg = 20;
+  std::cout << name << " has gained a ScavTrap upgrade." << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
   this->name = name;
-  hitPoints = 100;
-  energyPoints = 50;
-  dmg = 20;
-  std::cout << name << " has been upgraded to a ScavTrap!" << std::endl;
+  this->hitPoints = 100;
+  this->energyPoints = 50;
+  this->dmg = 20;
+  std::cout << name << " has gained a ScavTrap upgrade." << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src) {
+  this->name = src.name;
+  this->hitPoints = src.hitPoints;
+  this->energyPoints = src.energyPoints;
+  this->dmg = src.dmg;
+  std::cout << name << " has gained a ScavTrap upgrade." << std::endl;
 }
 
 ScavTrap::~ScavTrap() {
-  std::cout << name << " has lost its upgrade and is now a basic ClapTrap."
-            << std::endl;
+  std::cout << name << " has lost its ScavTrap upgrade." << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
+  if (this == &rhs) return (*this);
+  this->name = rhs.name;
+  this->hitPoints = rhs.hitPoints;
+  this->energyPoints = rhs.energyPoints;
+  this->dmg = rhs.dmg;
+  return (*this);
 }
 
 void ScavTrap::guardGate() {
   std::cout << name << " is now in 'Gate Keeper' mode." << std::endl;
+}
+
+void ScavTrap::attack(const std::string& target) {
+  std::cout << name << " flops like a fish on " << target << ", causing " << dmg
+            << " points of damage!" << std::endl;
 }

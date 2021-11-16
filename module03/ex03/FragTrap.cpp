@@ -6,49 +6,59 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 12:31:39 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 13:23:58 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/16 14:18:39 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() {
-  name = "FragTrap";
-  hitPoints = 100;
-  energyPoints = 100;
-  dmg = 30;
-  std::cout << "A ScavTrap has been upgraded to a FragTrap!" << std::endl;
+FragTrap::FragTrap() : ClapTrap("GenericTrap") {
+  this->name = "GenericTrap";
+  this->hitPoints = 100;
+  this->energyPoints = 100;
+  this->dmg = 30;
+  std::cout << name << " has gained a FragTrap upgrade." << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) {
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
   this->name = name;
-  hitPoints = 100;
-  energyPoints = 100;
-  dmg = 30;
-  std::cout << "A ScavTrap has been upgraded to a FragTrap!" << std::endl;
+  this->hitPoints = 100;
+  this->energyPoints = 100;
+  this->dmg = 30;
+  std::cout << name << " has gained a FragTrap upgrade." << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& src) {
-  name = src.name;
-  hitPoints = src.hitPoints;
-  energyPoints = src.energyPoints;
-  dmg = src.dmg;
-  std::cout << "A ScavTrap has been upgraded to a FragTrap!" << std::endl;
+FragTrap::FragTrap(const FragTrap& src) :ClapTrap(src.name) {
+  this->name = src.name;
+  this->hitPoints = src.hitPoints;
+  this->energyPoints = src.energyPoints;
+  this->dmg = src.dmg;
+  std::cout << name << " has gained a FragTrap upgrade." << std::endl;
 }
 
 FragTrap::~FragTrap() {
-  std::cout << name << " has been downgraded to a ScavTrap." << std::endl;
+  std::cout << name << " has lost its FragTrap upgrade." << std::endl;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& rhs) {
   if (this == &rhs) return (*this);
-  name = rhs.name;
-  hitPoints = rhs.hitPoints;
-  energyPoints = rhs.energyPoints;
-  dmg = rhs.dmg;
+  this->name = rhs.name;
+  this->hitPoints = rhs.hitPoints;
+  this->energyPoints = rhs.energyPoints;
+  this->dmg = rhs.dmg;
   return (*this);
+}
+
+void FragTrap::initDiamondTrap() {
+	this->hitPoints = 100;
+	this->dmg = 30;
 }
 
 void FragTrap::highFivesGuys(void) {
   std::cout << name << ": High five guys!!  ....  guys?..." << std::endl;
+}
+
+void FragTrap::attack(const std::string& target) {
+  std::cout << name << " throws frag grenade on " << target << ", causing " << dmg
+            << " points of damage!" << std::endl;
 }

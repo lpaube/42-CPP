@@ -6,34 +6,25 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:04:47 by laube             #+#    #+#             */
-/*   Updated: 2021/10/24 23:25:42 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/16 14:20:45 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void) {
-  FragTrap *fragy = new FragTrap("Fragy");
+	DiamondTrap diamondBoi;
 
-  fragy->attack("Bandit");
-  fragy->takeDamage(3);
-  fragy->beRepaired(2);
-  std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << "------ whoAmI -------" << std::endl;
+	diamondBoi.whoAmI();
+	std::cout << std::endl;
 
-  FragTrap *dummy = new FragTrap(*fragy);
-  dummy->highFivesGuys();
-  delete dummy;
-  std::cout << std::endl;
-
-  ScavTrap *fragtrap = new ScavTrap;
-  fragtrap->attack("Bandit");
-  fragtrap->takeDamage(3);
-  fragtrap->beRepaired(2);
-  fragtrap->takeDamage(4);
-  fragtrap->attack("Ghost");
-  fragtrap->guardGate();
-  delete fragtrap;
-  delete fragy;
+	DiamondTrap testBoi("TestBoi");
+	testBoi.attack("tree");
+	testBoi.printProp();
+	std::cout << std::endl;
 }
