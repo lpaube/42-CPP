@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:04:35 by laube             #+#    #+#             */
-/*   Updated: 2021/11/04 22:25:31 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/15 20:08:50 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ ClapTrap::ClapTrap() {
 }
 
 ClapTrap::ClapTrap(const ClapTrap& src) {
+    name = src.name;
 	hitPoints = src.hitPoints;
 	energyPoints = src.energyPoints;
 	dmg = src.dmg;
