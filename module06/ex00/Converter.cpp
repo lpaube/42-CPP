@@ -6,7 +6,7 @@
 /*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 20:13:40 by laube             #+#    #+#             */
-/*   Updated: 2021/11/18 15:03:45 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/18 15:57:44 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ void Converter::parse() {
 		std::cout << "Error: Input not a literal" << std::endl;
 	}
 	else {
-		std::cout << "Type: " << type << std::endl;
 		convert_char();
 		convert_int();
 		convert_float();
@@ -110,25 +109,25 @@ void Converter::convert_char() {
 		} else if (ival < 32 || ival == 127) {
 			std::cout << "char: Non displayable" << std::endl;
 		} else {
-			cval = (char)ival;
+			cval = static_cast<char>(ival);
 			std::cout << "char: " << cval << std::endl;
 		}
 	} else if (type == FLOAT) {
-		if ((int)fval < -128 || (int)fval > 127) {
+		if (static_cast<int>(fval) < -128 || static_cast<int>(fval) > 127) {
 			std::cout << "char: impossible" << std::endl;
-		} else if ((int)fval < 32 || (int)fval == 127) {
+		} else if (static_cast<int>(fval) < 32 || static_cast<int>(fval) == 127) {
 			std::cout << "char: Non displayable" << std::endl;
 		} else {
-			cval = (char)fval;
+			cval = static_cast<char>(fval);
 			std::cout << "char: " << cval << std::endl;
 		}
 	} else if (type == DOUBLE) {
-		if ((int)dval < -128 || (int)dval > 127) {
+		if (static_cast<int>(dval) < -128 || static_cast<int>(dval) > 127) {
 			std::cout << "char: impossible" << std::endl;
-		} else if ((int)dval < 32 || (int)dval == 127) {
+		} else if (static_cast<int>(dval) < 32 || static_cast<int>(dval) == 127) {
 			std::cout << "char: Non displayable" << std::endl;
 		} else {
-			cval = (char)dval;
+			cval = static_cast<char>(dval);
 			std::cout << "char: " << cval << std::endl;
 		}
 	}
@@ -136,33 +135,33 @@ void Converter::convert_char() {
 
 void Converter::convert_int() {
 	if (type == CHAR) {
-		ival = (int)cval;
+		ival = static_cast<int>(cval);
 	} else if (type == FLOAT) {
-		ival = (int)fval;
+		ival = static_cast<int>(fval);
 	} else if (type == DOUBLE) {
-		dval = (int)dval;
+		dval = static_cast<int>(dval);
 	}
 	std::cout << "int: " << ival << std::endl;
 }
 
 void Converter::convert_float() {
 	if (type == CHAR) {
-		fval = (float)cval;
+		fval = static_cast<float>(cval);
 	} else if (type == INT) {
-		fval = (float)ival;
+		fval = static_cast<float>(ival);
 	} else if (type == DOUBLE) {
-		fval = (float)dval;
+		fval = static_cast<float>(dval);
 	}
 	std::cout << "float: " << std::fixed << std::setprecision(1) << fval << "f" << std::endl;
 }
 
 void Converter::convert_double() {
 	if (type == CHAR) {
-		dval = (double)cval;
+		dval = static_cast<double>(cval);
 	} else if (type == INT) {
-		dval = (double)ival;
+		dval = static_cast<double>(ival);
 	} else if (type == FLOAT) {
-		dval = (double)fval;
+		dval = static_cast<double>(fval);
 	}
 	std::cout << "double: " << fval << std::endl;
 }
