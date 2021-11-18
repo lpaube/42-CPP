@@ -1,7 +1,7 @@
 #include <iostream>
 
 int	main(void) {
-	float x = nanf;
+	float x = 42f;
 
 	std::cout << "x: " << x << std::endl;
 }
