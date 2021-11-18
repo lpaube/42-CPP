@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Converter.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
+/*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 16:45:07 by laube             #+#    #+#             */
-/*   Updated: 2021/11/17 13:50:14 by laube            ###   ########.fr       */
+/*   Created: 2021/11/16 20:13:40 by laube             #+#    #+#             */
+/*   Updated: 2021/11/17 14:35:15 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include <iostream>
 
 #include "Converter.hpp"
 
-int main(int argc, char **argv) {
-	if (argc != 2) {
-		std::cout << "Error: Program takes 1 argument" << std::endl;
-		return 0;
-	}
-    Converter conv(argv[1]);
+Converter::Converter(std::string arg) : value(arg), type(INVALID) {
+    if (value.find("f") != -1)
+    {
+        this->type = FLOAT;
+        this->fval = 
+    }
 }
