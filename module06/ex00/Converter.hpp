@@ -6,7 +6,7 @@
 /*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 20:13:53 by laube             #+#    #+#             */
-/*   Updated: 2021/11/17 14:35:00 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/18 12:37:38 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,16 @@ class Converter {
 
         enum Type {
             INVALID,
+			SPECIAL,
             CHAR,
             INT,
             FLOAT,
             DOUBLE
         };
         void parse();
+		int special_case();
+		void convert_char();
+		void convert_int();
+		void convert_float();
+		void convert_double();
 };
