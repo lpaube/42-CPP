@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 16:33:08 by laube             #+#    #+#             */
-/*   Updated: 2021/11/19 13:24:57 by laube            ###   ########.fr       */
+/*   Created: 2021/11/19 13:05:59 by laube             #+#    #+#             */
+/*   Updated: 2021/11/19 13:25:14 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Data.hpp"
 
-Data* deserialize(uintptr_t raw) {
-	return (reinterpret_cast<Data*>(raw));
+Data::Data() {
+	num = 5;
+	c = 'f';
+	dbl = 5.42;
 }
 
-uintptr_t serialize(Data* ptr) {
-	return reinterpret_cast<uintptr_t>(ptr);
+Data::~Data() {}
+
+Data::Data(const Data& src) {
+	num = src.num;
+	c = src.c;
+	dbl = src.dbl;
 }
 
-int	main(void) {
-	Data *x = new Data();
-	std::cout << "Initial Data(x): " << x << std::endl;
-
-	uintptr_t y = serialize(x);
-	std::cout << "Serialized uintptr_t(y): " << y << std::endl;
-
-	Data *z = deserialize(y);
-	std::cout << "Deserialized Data(z): " << z << std::endl;
+Data& Data::operator=(const Data& rhs) {
+	num = rhs.num;
+	c = rhs.c;
+	dbl = rhs.dbl;
+	return (*this);
 }
+
