@@ -6,13 +6,13 @@
 /*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 18:42:48 by laube             #+#    #+#             */
-/*   Updated: 2021/11/14 18:57:30 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/19 13:32:17 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
-
 #pragma once
+
+#include "Form.hpp"
 
 class PresidentialPardonForm : public Form {
     private:
