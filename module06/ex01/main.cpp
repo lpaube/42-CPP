@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:33:08 by laube             #+#    #+#             */
-/*   Updated: 2021/11/19 13:24:57 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/19 17:25:25 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,9 @@ int	main(void) {
 
 	Data *z = deserialize(y);
 	std::cout << "Deserialized Data(z): " << z << std::endl;
+
+	// To show that the class is still usable
+	std::cout << "num: " << z->num << std::endl;
+	std::cout << "c: " << z->c << std::endl;
+	std::cout << "dbl: " << z->dbl << std::endl;
 }
