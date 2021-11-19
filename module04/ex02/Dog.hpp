@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:44:26 by laube             #+#    #+#             */
-/*   Updated: 2021/10/09 17:05:24 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/19 15:59:56 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal {
  public:
   Dog();
   Dog(const Dog& src);
-  ~Dog();
+  virtual ~Dog();
 
   Dog& operator=(const Dog& rhs);
 

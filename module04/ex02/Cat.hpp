@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:52:13 by laube             #+#    #+#             */
-/*   Updated: 2021/10/09 17:04:35 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/19 15:59:48 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : public Animal {
  public:
   Cat();
   Cat(const Cat& src);
-  ~Cat();
+  virtual ~Cat();
 
   Cat& operator=(const Cat& rhs);
 

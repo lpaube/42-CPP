@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 13:24:42 by laube             #+#    #+#             */
-/*   Updated: 2021/10/08 14:05:47 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/19 16:00:05 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Brain {
  public:
   Brain();
   Brain(const Brain& src);
-  ~Brain();
+  virtual ~Brain();
 
   Brain& operator=(const Brain& rhs);
 
