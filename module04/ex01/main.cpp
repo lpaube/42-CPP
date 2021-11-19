@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:56:57 by laube             #+#    #+#             */
-/*   Updated: 2021/10/09 14:22:48 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/19 15:49:10 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,14 @@ int	main(void) {
 
 	std::cout << "DELETING ORIGINAL DOGGY\n------------------" << std::endl;
 	delete doggy;
-//	std::cout << "PRINTING ORIGINAL DOGGY IDEA[0]\n------------------" << std::endl;
-//	std::cout << "Idea 0: " << doggy->getIdeas()[0] << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "PRINTING DEEP COPY DOGGY IDEA[0]\n------------------" << std::endl;
-	std::cout << "Idea 0: " << doggy_copy->getIdeas()[0] << std::endl;
-	std::cout << std::endl;
-
-	std::cout << "DELETING COPY DOGGY AND OG CAT\n------------------" << std::endl;
-	delete catty;
+	std::cout << "DELETING COPY DOGGY\n------------------" << std::endl;
 	delete doggy_copy;
+	std::cout << std::endl;
+
+	std::cout << "DELETING OG CAT\n------------------" << std::endl;
+	delete catty;
 	std::cout << std::endl;
 
 	std::cout << "CREATING ARRAY OF ANIMALS\n---------------------" << std::endl;
@@ -72,4 +69,8 @@ int	main(void) {
 	for (int x = 0; x < 10; x++) {
 		delete animals[x];
 	}
+
+	Dog testBoi;
+	Dog testGirl;
+	testBoi = testGirl;
 }

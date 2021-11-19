@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:55:07 by laube             #+#    #+#             */
-/*   Updated: 2021/10/09 14:00:12 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/19 15:51:22 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ Cat::~Cat() {
 Cat& Cat::operator=(const Cat& rhs) {
 	if (this == &rhs) return (*this);
 	type = rhs.type;
-	brain = new Brain;
-	*brain = *(rhs.brain);
+	brain = rhs.brain;
 	return (*this);
 }
 
