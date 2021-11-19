@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 13:06:23 by laube             #+#    #+#             */
-/*   Updated: 2021/11/19 13:23:49 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/19 13:35:49 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Data {
 		~Data();
 		Data& operator=(const Data& rhs);
 
+	private:
 		int num;
 		char c;
 		double dbl;
