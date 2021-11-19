@@ -6,7 +6,7 @@
 /*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 20:13:40 by laube             #+#    #+#             */
-/*   Updated: 2021/11/18 16:26:16 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/19 17:34:56 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ Converter::Converter(std::string arg) : value(arg), type(INVALID) {
 	size_t i;
 
 	i = 0;
+	if (value.length() == 1 && ((value[0] >= 32 && value[0] <= 47) || (value[0] >= 58 && value[0] <= 126))) {
+		ss << value[i++];
+		ss >> cval;
+		if ((value[0] >= 32 && value[0] <= 47) || (value[0] >= 58 && value[0] <= 126)) {
+			type = CHAR;
+			return;
+		} else {
+			return;
+		}
+	}
 	if (special_case())
 		return;
 	if (value[i] == '+' || value[i] == '-') {
