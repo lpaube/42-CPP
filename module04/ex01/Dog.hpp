@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:44:26 by laube             #+#    #+#             */
-/*   Updated: 2021/11/19 15:51:41 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/24 16:49:15 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class Dog : public Animal {
 		Dog(const Dog& src);
 		virtual ~Dog();
 
-		Dog& operator=(const Dog& rhs);
-
+		virtual void makeSound() const;
 		std::string* getIdeas() const;
+		Dog& operator=(const Dog& rhs);
 };
 
 #endif
