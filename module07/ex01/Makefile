@@ -7,7 +7,7 @@ OBJS =	$(SRCS:.cpp=.o)
 
 OBJS_PATH =	$(addprefix $(OBJ_DIR)/, $(OBJS))
 
-CC =	clang++
+CC =	c++
 CFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(OBJ_DIR) $(OBJS_PATH)
