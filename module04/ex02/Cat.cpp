@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:55:07 by laube             #+#    #+#             */
-/*   Updated: 2021/11/19 16:53:24 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/24 16:56:22 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,8 @@ Cat& Cat::operator=(const Cat& rhs) {
   return (*this);
 }
 
-std::string* Cat::getIdeas() const { return (this->brain->ideas); }
-
 void Cat::makeSound() const {
-  if (type.size() == 0)
-    std::cout << "This animal is of the silent type..." << type << std::endl;
-  else if (type.compare("Dog") == 0)
-    std::cout << "Woof" << std::endl;
-  else if (type.compare("Cat") == 0)
-    std::cout << "Miaou" << std::endl;
+	std::cout << "Miaou" << std::endl;
 }
+
+std::string* Cat::getIdeas() const { return (this->brain->ideas); }

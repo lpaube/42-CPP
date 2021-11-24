@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:56:57 by laube             #+#    #+#             */
-/*   Updated: 2021/11/19 16:49:56 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/24 17:07:12 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,14 @@ int	main(void) {
 	Animal* animals[10];
 	for (int x = 0; x < 10; x++) {
 		if (x % 2 == 0)
-			animals[x] = new Cat;
-		else
 			animals[x] = new Dog;
+		else
+			animals[x] = new Cat;
 	}
+	std::cout << std::endl;
+
+	animals[2]->makeSound();
+	animals[3]->makeSound();
 	std::cout << std::endl;
 
 	std::cout << "PRINTING TYPE OF ANIMALS\n---------------------" << std::endl;

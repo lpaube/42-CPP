@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 14:58:41 by laube             #+#    #+#             */
-/*   Updated: 2021/10/09 17:01:59 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/24 17:00:10 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Animal {
   Animal& operator=(const Animal& rhs);
 
   virtual void makeSound() const = 0;
-  virtual const std::string getType() const;
   virtual void setType(std::string type);
+  virtual const std::string getType() const;
 };
 
 #endif
