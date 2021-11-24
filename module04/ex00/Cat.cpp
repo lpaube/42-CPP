@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:55:07 by laube             #+#    #+#             */
-/*   Updated: 2021/10/08 10:53:09 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/24 16:42:16 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,8 @@ Cat& Cat::operator=(const Cat& rhs) {
 	if (this == &rhs) return (*this);
 	type = rhs.type;
 	return (*this);
+}
+
+void Cat::makeSound() const {
+	std::cout << "Miaou" << std::endl;
 }

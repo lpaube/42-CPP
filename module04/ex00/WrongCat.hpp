@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:05:19 by laube             #+#    #+#             */
-/*   Updated: 2021/10/08 11:06:12 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/24 16:45:09 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ class WrongCat : public WrongAnimal {
 	public:
 		WrongCat();
 		WrongCat(const WrongCat& src);
-		~WrongCat();
+		virtual ~WrongCat();
 
 		WrongCat& operator=(const WrongCat& rhs);
+		void makeSound() const;
 };
 
 #endif

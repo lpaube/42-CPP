@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 22:44:26 by laube             #+#    #+#             */
-/*   Updated: 2021/10/07 22:46:13 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/24 16:37:36 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Dog : public Animal {
 		~Dog();
 
 		Dog& operator=(const Dog& rhs);
+		virtual void makeSound() const;
 };
 
 #endif

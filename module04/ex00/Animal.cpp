@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 15:03:03 by laube             #+#    #+#             */
-/*   Updated: 2021/10/08 10:58:18 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/24 16:39:15 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,7 @@ Animal& Animal::operator=(const Animal& rhs) {
 }
 
 void Animal::makeSound() const {
-	if (type.size() == 0)
-		std::cout << "This animal is of the silent type..." << type << std::endl;
-	else if (type.compare("Dog") == 0)
-		std::cout << "Woof" << std::endl;
-	else if (type.compare("Cat") == 0)
-		std::cout << "Miaou" << std::endl;
+	std::cout << "This animal is of the silent type..." << type << std::endl;
 }
 
 const std::string Animal::getType() const {

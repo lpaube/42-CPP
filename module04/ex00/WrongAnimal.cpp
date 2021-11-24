@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:18:51 by laube             #+#    #+#             */
-/*   Updated: 2021/10/08 11:22:43 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/24 16:43:02 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs) {
 }
 
 void WrongAnimal::makeSound() const {
-	if (type.size() == 0)
-		std::cout << "This wrong animal is of the silent type..." << type << std::endl;
-	else if (type.compare("WrongCat") == 0)
-		std::cout << "Mia..(I am an abomination)..ou" << std::endl;
+	std::cout << "This wrong animal is of the silent type..." << std::endl;
 }
 
 const std::string WrongAnimal::getType() const {
