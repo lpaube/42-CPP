@@ -6,12 +6,12 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 12:54:21 by laube             #+#    #+#             */
-/*   Updated: 2021/11/25 15:07:08 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/25 15:38:30 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-template<typename T, typename U>
-void swap(T& x, U& y) {
+template<typename T>
+void swap(T& x, T& y) {
 	T tmp = x;
 	x = y;
 	y = tmp;
