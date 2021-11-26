@@ -2,7 +2,7 @@ NAME =	template02
 
 OBJ_DIR =	objs
 
-SRCS =	main.cpp Array.cpp
+SRCS =	main.cpp
 OBJS =	$(SRCS:.cpp=.o)
 
 OBJS_PATH =	$(addprefix $(OBJ_DIR)/, $(OBJS))
