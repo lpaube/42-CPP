@@ -6,26 +6,31 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:25:03 by laube             #+#    #+#             */
-/*   Updated: 2021/11/26 14:04:28 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/27 15:55:30 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <exception>
 
 template<typename T>
 class Array {
 	private:
-		int arr_len;
+		unsigned int arr_len;
 		T *arr;
 	public:
 		Array();
 		Array(unsigned int n);
-		Array(const T &src);
+		Array(const Array &src);
 		Array& operator=(const T &rhs);
-        T& operator[](int i) const;
+        T& operator[](unsigned int i);
+
+		unsigned int size();
 };
 
 template<typename T>
 Array<T>::Array() {
-	arr = new T[]();
+	arr = nullptr;
+	arr_len = 0;
 }
 
 template<typename T>
@@ -35,24 +40,32 @@ Array<T>::Array(unsigned int n) {
 }
 
 template<typename T>
-Array<T>::Array(const T &src) {
+Array<T>::Array(const Array &src) {
 	arr_len = src.arr_len;
-    arr = new T[arr_len]();
-    for (int i = 0; i < arr_len; i++) {
-        arr[i] = src.arr[i];
+	arr = new T[arr_len]();
+	for (unsigned int i = 0; i < arr_len; i++) {
+		arr[i] = src.arr[i];
     }
 }
 
 template<typename T>
 Array<T>& Array<T>::operator=(const T &rhs) {
 	arr_len = rhs.arr_len;
-    arr = new T[arr_len]();
-    for (int i = 0; i < arr_len; i++) {
-        arr[i] = rhs.arr[i];
-    }
+	arr = new T[arr_len]();
+	for (int i = 0; i < arr_len; i++) {
+		arr[i] = rhs.arr[i];
+	}
 }
 
 template<typename T>
-T& operator[](int i) const {
-    
+T& Array<T>::operator[](unsigned int i) {
+	if (i >= arr_len || i < 0) {
+		throw std::exception();
+	}
+	return arr[i];
+}
+
+template<typename T>
+unsigned int Array<T>::size() {
+	return arr_len;
 }
