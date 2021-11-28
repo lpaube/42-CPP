@@ -6,7 +6,7 @@
 /*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:46:34 by laube             #+#    #+#             */
-/*   Updated: 2021/11/12 15:36:54 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/28 15:31:55 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Form;
 
 class Bureaucrat {
     private:
-        std::string _name;
+        const std::string _name;
         int _grade;
 
     public:
