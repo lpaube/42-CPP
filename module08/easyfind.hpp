@@ -6,18 +6,26 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 17:41:32 by laube             #+#    #+#             */
-/*   Updated: 2021/11/27 18:08:25 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/28 23:06:20 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-template<typename T>
-int easyfind(std::<T>int num_list, int y) {
-	std::T<int>::const_iterator it;
-	std::T<int>::const_iterator ite = num_list.end();
+#include <iostream>
+#include <stdexcept>
+#include <vector>
+#include <exception>
 
-	for (it = num_list.begin(); it != ite; ++it) {
+template<typename T>
+typename T::iterator easyfind(T& num_container, int y) {
+
+	typename T::iterator it;
+	typename T::iterator ite = num_container.end();
+
+	for (it = num_container.begin(); it != ite; ++it) {
 		if (*it == y)
-			return *it;
+        {
+			return it;
+        }
 	}
-	throw std::exception;
+	throw std::invalid_argument("Number not found");
 }
