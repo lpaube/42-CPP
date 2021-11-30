@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 14:34:56 by laube             #+#    #+#             */
-/*   Updated: 2021/11/30 13:23:22 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/30 13:25:50 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,19 @@ int main(void) {
         std::array<int, 5>::iterator it = arr.begin();
         std::array<int, 5>::iterator ite = arr.end();
         sp.addNumber<std::array<int, 5>::iterator>(it, ite);
+    }
+    catch (std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
+    std::cout << std::endl;
+
+    try {
+        std::cout << "--------Exception not enough elements for span---------" << std::endl;
+        Span sp = Span(5);
+        sp.addNumber(5);
+        std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+        std::cout << "Longest span: " << sp.longestSpan() << std::endl;
+        std::cout << std::endl;
     }
     catch (std::exception& e) {
         std::cout << e.what() << std::endl;
