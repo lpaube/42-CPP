@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:02:59 by laube             #+#    #+#             */
-/*   Updated: 2021/11/30 13:20:53 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/30 13:43:50 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,18 @@ Span::Span() {}
 Span::Span(unsigned int N) : _capacity(N) {}
 
 Span::Span(const Span& rhs) : _capacity(rhs._capacity) {
-
-} // need to copy vector
+    _num_vec.clear();
+    _num_vec = rhs._num_vec;
+}
 
 Span::~Span() {}
 
 Span& Span::operator=(const Span& src) {
 	_capacity = src._capacity;
+    _num_vec.clear();
+    _num_vec = src._num_vec;
 	return *this;
 }
-// need to copy vector
 
 void Span::addNumber(int num) {
 	if (_num_vec.size() >= _capacity)
