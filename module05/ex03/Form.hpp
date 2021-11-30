@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:16:24 by laube             #+#    #+#             */
-/*   Updated: 2021/11/14 18:02:44 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/30 14:30:06 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,16 @@ class Form {
                 FormNotSignedException() : _msg("The grade is too low.") {}
                 FormNotSignedException(const std::string& msg) : _msg(msg) {}
                 virtual ~FormNotSignedException() throw() {}
+                virtual const char* what() const throw();
+        };
+        class FormNotFoundException : public std::exception {
+            private:
+                const std::string _msg;
+
+            public:
+                FormNotFoundException() : _msg("The grade is too low.") {}
+                FormNotFoundException(const std::string& msg) : _msg(msg) {}
+                virtual ~FormNotFoundException() throw() {}
                 virtual const char* what() const throw();
         };
 };

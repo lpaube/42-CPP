@@ -6,7 +6,7 @@
 /*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:29:03 by laube             #+#    #+#             */
-/*   Updated: 2021/11/14 19:10:12 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/28 23:10:10 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
     int round_num = r_num % 2;
 
     Form::execute(executor);
-    std::cout << "rnum: " << r_num << std::endl;
     if (round_num == 1)
         std::cout << "*BZZZZ BZZZZZ* " << _target << " is now robotomized." << std::endl;
     else

@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:08:36 by laube             #+#    #+#             */
-/*   Updated: 2021/11/12 21:38:52 by laube            ###   ########.fr       */
+/*   Updated: 2021/11/30 14:30:16 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ const char* Form::GradeTooLowException::what() const throw() {
 }
 
 const char* Form::FormNotSignedException::what() const throw() {
+    return _msg.c_str();
+}
+
+const char* Form::FormNotFoundException::what() const throw() {
     return _msg.c_str();
 }
 
