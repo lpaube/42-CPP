@@ -6,12 +6,12 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 14:34:56 by laube             #+#    #+#             */
-/*   Updated: 2021/11/30 13:25:50 by laube            ###   ########.fr       */
+/*   Updated: 2021/12/01 15:02:41 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <array>
+#include <vector>
 
 #include "span.hpp"
 
@@ -29,27 +29,27 @@ int main(void) {
         std::cout << std::endl;
 
         std::cout << "--------Iterators (100)---------" << std::endl;
-        std::array<int, 100> arr;
-        for (int i = 0; i < arr.size(); i++) {
+        std::vector<int> arr(100);
+        for (long unsigned int i = 0; i < arr.size(); i++) {
             arr[i] = i * 2;
         }
-        std::array<int, 100>::iterator it = arr.begin();
-        std::array<int, 100>::iterator ite = arr.end();
+        std::vector<int>::iterator it = arr.begin();
+        std::vector<int>::iterator ite = arr.end();
         Span sp2 = Span(100);
-        sp2.addNumber<std::array<int, 100>::iterator>(it, ite);
+        sp2.addNumber<std::vector<int>::iterator>(it, ite);
         std::cout << "Shortest span: " << sp2.shortestSpan() << std::endl;
         std::cout << "Longest span: " << sp2.longestSpan() << std::endl;
         std::cout << std::endl;
 
         std::cout << "--------Iterators (100,000)---------" << std::endl;
-        std::array<int, 100000> arr2;
-        for (int i = 0; i < arr2.size(); i++) {
+        std::vector<int> arr2(100000);
+        for (long unsigned int i = 0; i < arr2.size(); i++) {
             arr2[i] = i * 2;
         }
-        std::array<int, 100000>::iterator it2 = arr2.begin();
-        std::array<int, 100000>::iterator ite2 = arr2.end();
+        std::vector<int>::iterator it2 = arr2.begin();
+        std::vector<int>::iterator ite2 = arr2.end();
         Span sp3 = Span(100000);
-        sp3.addNumber<std::array<int, 100000>::iterator>(it2, ite2);
+        sp3.addNumber<std::vector<int>::iterator>(it2, ite2);
         std::cout << "Shortest span: " << sp3.shortestSpan() << std::endl;
         std::cout << "Longest span: " << sp3.longestSpan() << std::endl;
         std::cout << std::endl;
@@ -79,13 +79,13 @@ int main(void) {
         sp.addNumber(5);
         sp.addNumber(3);
         sp.addNumber(17);
-        std::array<int, 5> arr;
-        for (int i = 0; i < arr.size(); i++) {
+        std::vector<int> arr(5);
+        for (long unsigned int i = 0; i < arr.size(); i++) {
             arr[i] = i * 2;
         }
-        std::array<int, 5>::iterator it = arr.begin();
-        std::array<int, 5>::iterator ite = arr.end();
-        sp.addNumber<std::array<int, 5>::iterator>(it, ite);
+        std::vector<int>::iterator it = arr.begin();
+        std::vector<int>::iterator ite = arr.end();
+        sp.addNumber<std::vector<int>::iterator>(it, ite);
     }
     catch (std::exception& e) {
         std::cout << e.what() << std::endl;
