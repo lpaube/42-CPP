@@ -6,9 +6,13 @@
 /*   By: laube <laube@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:50:20 by laube             #+#    #+#             */
-/*   Updated: 2021/12/01 16:50:56 by laube            ###   ########.fr       */
+/*   Updated: 2021/12/01 23:49:25 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <iostream>
+
+#include "mutantstack.hpp"
 
 int main()
 {
