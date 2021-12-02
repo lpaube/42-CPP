@@ -6,13 +6,14 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:25:03 by laube             #+#    #+#             */
-/*   Updated: 2021/11/28 14:03:53 by laube            ###   ########.fr       */
+/*   Updated: 2021/12/02 16:31:33 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <exception>
+#include <cstddef>
 
 template<typename T>
 class Array {
@@ -31,7 +32,7 @@ class Array {
 
 template<typename T>
 Array<T>::Array() {
-	arr = nullptr;
+	arr = NULL;
 	arr_len = 0;
 }
 
@@ -61,7 +62,7 @@ Array<T>& Array<T>::operator=(const T &rhs) {
 
 template<typename T>
 T& Array<T>::operator[](unsigned int i) {
-	if (i >= arr_len || i < 0) {
+	if (i >= arr_len) {
 		throw std::exception();
 	}
 	return arr[i];
