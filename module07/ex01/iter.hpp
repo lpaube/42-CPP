@@ -6,14 +6,14 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:21:02 by laube             #+#    #+#             */
-/*   Updated: 2021/11/28 14:03:38 by laube            ###   ########.fr       */
+/*   Updated: 2021/12/09 12:50:15 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 template<typename T>
-void iter(T* arr, int len, void (*f)(T)) {
+void iter(T* arr, int len, void (*f)(const T &ele)) {
 	for (int i = 0; i < len; i++) {
 		f(arr[i]);
 	}
