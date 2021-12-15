@@ -6,7 +6,7 @@
 /*   By: laube <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:02:59 by laube             #+#    #+#             */
-/*   Updated: 2021/11/30 13:43:50 by laube            ###   ########.fr       */
+/*   Updated: 2021/12/15 12:35:13 by laube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ unsigned int Span::shortestSpan() const {
 	unsigned int short_span = std::abs(*(it + 1) - *it);
 	it++;
 	while (it + 1 != ite) {
-		if (std::abs(*(it + 1) - *it) < short_span)
+		if (static_cast<unsigned int>(std::abs(*(it + 1) - *it)) < short_span)
 			short_span = std::abs(*(it + 1) - *it);
 		it++;
 	}
